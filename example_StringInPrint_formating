@@ -1,0 +1,42 @@
+#!/usr/bin/python3.5
+
+#
+#******* formating in print **********#
+#
+a = 100
+b = "ABC"
+
+'''***********************String, numeric formating********************'''
+
+# Method I: "...%s..%d..." %( str, int ) , which is like printf in C. 
+print( "This is %d %s" %( a, b) )
+''' More advanced'''
+''' 
+	"%[(keyname)][flags][width][.precise]type_codes" %var 
+'''
+x = 1234
+print( "Integer: %d,%-6d,%06d,%-06d" %(x, x, x, x) )
+y = 3.141718612222234542
+print( "Float: %e, %f, %-6.4f, %10.2f, %g" %( y, y, y, y, y) )
+
+# Method II: "....{}...{}....".format( , ) 
+print( "This is {} {}.".format( a, b) )
+
+
+#Method III: "...{0}..{1}...".foramt( , )
+print( "This is {0} {1}.".format( a, b) )
+
+
+'''***********************  dict formating ********************''' 
+'''
+		"%(key)type_code" %dict		
+'''
+spec = dict( emmision = 3.4, brand="Porsche" )
+print( "It is a %(brand)s, emision is %(emmision)d" %spec )
+print( "%(sqrt)d and %(length)s" %{ "sqrt":100, "length":"square" } ) 
+ 
+# Special Case
+# vars() returns all variables and its values by dict.
+print( "Use vars(). The x is %(x)d, spec is %(b)s." %vars() )
+
+

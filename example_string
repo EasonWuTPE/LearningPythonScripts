@@ -1,0 +1,43 @@
+#!/usr/bin/python3.5
+
+
+# Slice
+print("-"*5+"slice"+"-"*5)
+string = "ABCDEFGHIGK"
+print( string[:] )
+print( string[1:5] )
+print( string[::2] )
+print( string[::-1] )
+print( string[6:2:-2] )
+print( "ABCDEFGHI"[1:5] )
+print( "ABCDEFGHI"[slice(1,5)] )
+''' 
+----------------------------------------------------------
+
+# "Row strings" suppress escape 
+# Sometimes strings like file path that contains "\" that escapes sequence
+#	may run into error
+print( "-"*3+"row string suppress escape"+"-"*3 )
+filepath = "C:\usr\tvjs1\new"
+print( filepath ) #It is expected that run into error
+
+# Method I to suppress escape: use "\\"
+filepath = "C:\usr\\tvjs1\\new"
+print( filepath )
+# Method II to suppress escape: row string that plus r before string.
+#		e.g. r"ABC"
+filepath = r"C:\usr\tvjs1\new"
+print( filepath )
+print( filepath )
+
+
+
+
+'''
+
+# string format
+K = "sdd"
+print( "K = %s." %K )
+print( "That is %d %s" % ( 1, K ) )
+print( "That is {} {}.".foramt( 1, K ) )
+print( "That is {0} {1}".format( 1, K ) )

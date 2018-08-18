@@ -1,0 +1,18 @@
+#!/usr/bin/python3.5
+
+# fraction module
+
+from fractions import Fraction
+
+x = Fraction(1,2)
+y = Fraction(2,9)
+
+print( x+y )
+print( x/y )
+
+print( Fraction('0.25') ) # Fraction() can also recieve a float number "strings".
+print( Fraction('.001') + Fraction('0.2332') )
+print( (2.5).as_integer_ratio() ) # Convert the float to fraction.
+print( Fraction.from_float(1.75) ) # Convert the float to fraction in the other way.
+print( x + 1.2 ) # fraction + float = float
+print( x + 1 ) # fraction + integer = fraction

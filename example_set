@@ -1,0 +1,61 @@
+#!/usr/bin/python3 
+'''  
+SET is neither sequence nor mapping. 
+It is an unordered collection of unique and immutable object.
+Use { } or set( ) which only accept strings or list to make SET object.
+The concept of SET is the same as the "set" in Math.
+The elements of the SET wouldn't repeat, like "set" in Math.
+'''
+# Declare the set
+set0 = {} #The delcaration {} means that DICT, not SET
+set0_1 = set() # The right way to declare SET
+print( type(set0), type(set0_1) )
+print( "{}".format( set( "ASSAWQSS") ) )
+set1 = { 1, 2, 3, 'A', 'B' }
+set2 = set( "ABCDE" ) #set() is only used for lirterals, and list
+set3 = set( [x for x in range(3) ] )
+print( "SET1 is {}.".format(set1) )
+print( "SET2 is {}.".format(set2) )
+print( "SET3 is {}.".format(set3) )
+
+print( "The union of set1 and set2 is {}.".format( set1 | set2 ) )
+print( "The intersection of set1 and set2 is {}".format( set1&set2 ) )
+
+# Filtering out the duplicate
+list1 = list( set( [ 1,2,3,4,3,3,3,100,3,10] ) )
+print( "Use the set() in list() to filter out the duplicate: {}.".format(list1) )
+
+# Some operation of SET
+print( set("sedw") - set("sevvrt") ) #find the Difference
+print( set("sedw") == set("sevvrt") )
+print( set("SWS") & {'s','w','s'} ) # find the Intersection
+print( "**.method for set recieves list, set, tuple.{} {} {}.".format( {1,2,3}.union([3,4,5]), {1,2,3}.union((3,4,5)), {1,2,3}.union( set([3,4,5]) ) ) ) 
+# | used for set
+print( "**| only used for set {}.".format( {1,2,3}|{3,4} ) ) # | used for set
+
+
+# condition
+print( 'p' in set("asa"), 's' in set("asa") )
+
+#--------------------------------EMBEDED------------------------------------------------------#
+'''
+SET and TUPLE are immutable, and LIST and DICT aren't
+SET can only be embeded by immutalbe object, e.g. tuple
+'''
+s = {1,2,3}
+s.add( (100,1000) )
+s.add( "ABC" )
+print( "Embeded s is {}.".format(s) )
+'''
+# ERROR!
+s = {1,2,3}
+s.add( [100,1000] )
+print( s )
+# ERROR! 
+s = {1,2,3}
+s.add( {100:1000} )
+print( s ) 
+'''
+#--------------------------------------SET COMPREHENSION---------------------------------------------------------------------#
+set_comprehension = { x**3 for x in range(1,10) }
+print( "set comprehesion: {}."format( set_comprehension ) )

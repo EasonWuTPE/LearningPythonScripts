@@ -1,0 +1,41 @@
+#! /usr/bin/python3
+#-----------------Some examples of dict operation---------------------
+
+dic = { 'A':1, 'B':2, 'C':3 }
+print( "1. The dict is {}".format( dic ) )
+print( "2. The dic['A'] is {}.".format( dic['A'] ) )
+dic['D'] = 4 #cannot use .append() 
+# the order of dict is random
+print( dic ) 
+
+dic2 = dict( name = "Eason", age = 22, school = "NCCU" )
+print( "3. The dic2 is {}.".format( dic2 ) )
+
+#       Nesting dict by list or dict, LIST can only nested by list.
+record = { "name": { "fisrt":"Eason", "last":"Wu"}, "age":23, "school":{ "name":"NCCU", "major":"econ"}, "spec":["174 cm"] }
+print( "4. The record is {}.".format( record ) )
+print( "5. The record[\"shool\"][\"name\"] is\n{}.".format( record["school"]["name"] ) )
+record[ "home" ] = "Taipei"
+print( "6. Add the key home: {}.".format( record ) )
+# Append the list in dict
+record["spec"].append( "68 kg " )
+print( "7. Append the list in \"spec\": {}.".format( record ) )
+
+
+
+#-------------Find Missing Value by condition( if in .get() )----------------
+
+print( "------FIND MISSING VALUE BY CONDITION  STATEMENTS(IF IN GET() )----" )
+print( "Is \"sex\" in record?" )
+# 1.
+if "sex" not in record:
+	print( "Missing")
+# 2.
+print( "sex" in record )
+# 3.
+value1 = record["sex"] if "sex" in record else 0
+print( record["sex"] if "sex" in record else 0 )
+print( value1 )
+# 4.
+print( record.get( "sex", "NOT FOUND" ) )
+

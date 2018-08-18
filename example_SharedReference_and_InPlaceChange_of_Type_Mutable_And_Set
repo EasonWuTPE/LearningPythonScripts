@@ -1,0 +1,59 @@
+#!/usr/bin/python3.5
+
+'''
+The shared reference and in-place change in mutable objects and set.
+'''
+
+L1 = [ 1,2,4 ]
+L2 = L1 #L1 share "reference" with L2
+
+#Case 1#
+L1 = 100
+print( "Change L1 to 100, then the result of L1 and L2 is:\
+{},{}.".format( L1,L2) )
+print( "The content of L2 doesn't change.")
+
+#Case 2#
+L1 = [1,2,4]
+L2 = L1
+L1[0] = 10000
+print( "Change L1[0] to 1000, then the result of L1 and L2 is:\
+{},{}.".format( L1,L2)) 
+print( "The content of L2 do change.")
+
+'''
+	Use "copy" not reference to avoid this.
+'''
+L1 = [ 1,2,4 ]
+# Method 1
+L2 = L1[:] # Use "slice" to copy from L1 to L2, not reference that lead to weird thing. L1 and L2 point to different objects. But "slice" won't work on SET and DICT, which are not "sequence".
+print( "L1 is L2 = {}, means that they aren't same object".format( L1 is L2) )
+L1[0] = 1000
+print( "Use slice to copy from L1 to L2, which doesn't change with L1.")
+print( "Set L1[0]=1000, L1={},L2={}".format( L1, L2) )
+print( "L1 is L2 = {}, means that they aren't same object".format( L1 is L2) )
+
+
+#Method 2 
+# Use .copy() to copy the reference.
+import copy
+
+L1 = [ 1,2,4 ]
+L2 = copy.copy(L1) #Make a copy from L1 to L2
+L1[0] = 100
+print( "Use .copy() in module copy to L2. L1 is {}, L2 is {}.".\
+		format( L1, L2 ) )
+
+# Special Cases
+# In python, small int and str are not literally reclaimed.
+# It will remain in system table to be reused the next time you generate.
+A1 = 42 
+A2 = 42
+print( "A1=42 and A2=42." )
+print( "A1 is A2:{}. Same object".format( A1 is A2 ) )
+
+X=[1,2,3]
+Y=[1,2,3]
+print( "X = Y = [1,2,3}" )
+print( "X is Y: {}.Not same object.".format( X is Y ) )
+ 

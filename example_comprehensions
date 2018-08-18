@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+
+# Instances for COMPREHESIONS, for list
+
+Matrix = [ [ 2, 2, 3],
+		   [ 100, 200, 300],
+		   [ 200, 300, 400] ]
+ 
+# Method 1
+col1 = [ row[0] for row in Matrix ]
+print( col1 )
+
+#Method 2 
+col1 = [ ] 
+for row in Matrix:
+	col1.append( row[0] )
+print( col1 )
+
+# Use comprehension with filter
+Filter = [ X*2 for X in range( -10, 21, 3) if X%2 == 0 ]
+print( Filter )
+
+
