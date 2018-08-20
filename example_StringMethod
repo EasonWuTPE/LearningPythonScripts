@@ -1,0 +1,43 @@
+#!/usr/bin/python3.5
+
+# String .Method
+
+A = "ABC"
+B = "BCD"
+
+# Method I
+print( "I: A = {}, B = {}.".format( A, B ) )
+
+# Method II
+print( "II: A = {0}, B = {1}.".format( A, B ) )
+
+# Method III
+print( "III: A = {A}, B = {B}.".format( B="BCD", A="ABC" ) )
+
+# Method IV
+print( "IV: A = {A}, B = {0}.".format( B, A="ABC" ) )
+
+# Method V
+print( "V: A = %s, B = %s." %( A, B ) )
+
+# Method VI
+print( "VI: A = %(A)s, B = %(B)s.".format( A="ABC",B="BCD" ) )
+
+# Method VII
+print( "VII: A = %s, food = {food}.".format( A, food=[1,2] ) )
+
+
+# Adding keys, attributes, and offset
+import sys
+print( "My {1[kind]} that runs {0.platform} is {1[brand]}.".format( sys,{"kind":"laptop", "brand":"ASUS"} ) ) # The keys of dict of string doesn't need to quotes.
+
+somelist = list( "APPLE" )
+print( "The first letter is {0[0]} and last letter is {0[4]}.".format(somelist) )
+
+# Some Notes
+string = "AB,BC,CD"
+print( "The string = %s." %( string ) )
+print( "The string.split('.')[0] = {}.".format(string.split(',')[0] ) )
+print( "The string.split('.')[1] = {}.".format(string.split(',')[1] ) )
+print( "The string.split('.')[2] = {}.".format(string.split(',')[2] ) )
+
