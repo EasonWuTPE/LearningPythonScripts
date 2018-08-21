@@ -1,0 +1,17 @@
+#!/usr/bin/python3.5
+
+x = 3 
+# A variable's Name x which is a pointer points to an object whose value is 3 and type is int.
+
+x = "ABC"
+# Variable has no type. Type is tied with objects. 
+# When you change the value of a variable, it means that you change the reference of x, the object that is pointed by x not x itself.
+
+x = 3
+y = x # Shared reference
+print( x is y )
+# x and y point to the same object.
+
+# When the object is mutable, list, dicr, or set, are shared reference, you need to becareful
+# Check out script "example_SharedReference_and_InPlaceChange_of_Type_Mutable_And_Set"
+
