@@ -2,5 +2,56 @@
 
 # List is a collection of any type of objects, which is a "array of pointers".
 # List is mutable, like dict, and sequence, like string, tuple.
-#
+# slice, offset
+
+# Slice
+list1 = [ x for x in range(12)]
+print("**** SLICE ****")
+print( list1[:] )
+print( list1[::2] )
+print( list1[::-1] )
+print( list1[-1] )
+print( list1[2:-1] )
+print( list1[2:-1:-1] )
+
+# Slice assignment is a combination of deletion and insertion.
+print("**** SLICE ASSIGNMENT ****")
+list1[2:6] = [ y for y in range(100,104) ]
+print(list1)
+
+L = [ 100, 200, 300, 400]
+L[:0] = [1,2,3] # Insert [1,2,3] in front of index 0
+print(L) 
+L[:2] = [10,20] # Insert [1,2,3] in front of index 2
+print(L)
+L[0:2] = L[2:4]
+print(L)
+
+# List method
+print("**** LIST METHOD ****")
+L2 = ["Hi", "Hellow" ]
+print( L2 )
+#*****#
+# .append() add the arguement as a element to the end of original list
+# .extend() change the argument into type "list" and cat to the end of origin list
+L2.extend([1,2,3]) # .extend()
+print(".extend():{}.".format( L2 ) )
+L2.append([1,2,3] ) # .append()
+print(".append():{}.".format( L2 ) )
+
+L3 = ["Asc","asc","DF", "assxs"]
+L3.sort( key = str.upper, reverse = True )
+print(L3)
+
+# .pop(index) .count(element) .remove(element) .insert( index, value)
+
+# del
+print( "del list[index]" )
+L3 = ["spam","abc","GFH","XYZ","xyz"]
+del L3[2]
+print( L3 )
+del L3[1:3]
+print( L3 ) 
+
+
 
