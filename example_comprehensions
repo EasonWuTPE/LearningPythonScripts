@@ -21,3 +21,9 @@ Filter = [ X*2 for X in range( -10, 21, 3) if X%2 == 0 ]
 print( Filter )
 
 
+# COMPREHENSIONS for dict
+
+dic4 = { key: val for ( key, val) in zip( ['a','b','c'], [1,2,3] ) }
+print( "The dic4 is {}.".format(dic4) )
+dic5 = { x: x**2 for x in range(6) }
+print( "The dic5 is {}.".format(dic5) )
