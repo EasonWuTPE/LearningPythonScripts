@@ -2,6 +2,7 @@
 
 # List is a collection of any type of objects, which is a "array of pointers".
 # List is mutable, like dict, and sequence, like string, tuple.
+# Arrays of objects references.
 # slice, offset
 
 # Slice

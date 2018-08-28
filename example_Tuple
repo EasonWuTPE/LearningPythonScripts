@@ -2,15 +2,28 @@
 
 # tuple objects is immutable like string and sequence like list and string.
 # Tuple object is immutable, like stringe, usaully represent a fixed collection of items.
-# A sequence of any type of data called by index, like list.
+# A sequence of any type of data or nestable called by index, like list.
+# Like list, tuple is arrays of objects references.
 # Use parantheness to store value.
-
 # Tuples are not like list and dict, which cannot shrink and growth. But can be nested andsupport any data types.
-t1 = ( 1, 2, "ABC", ["name", "age"] )
+
+
+t1 = ( 1, 2, "ABC", ["name", "age"], {'A':1,'B':2}, (100,200 ),{12,21,12,23} )
 print(t1)
 print( "{}".format( t1[3][1] ) )
 
 # Parenthess can be ommited
-t2 = 1, 2, "Spam", [ 'A', 'B']
+t2 =  1, 2, "ABC", ["name", "age"], {'A':1,'B':2}, (100,200 ),{12,21,12,23} 
 print("The tuple declartion without parenthess is legal: {}".format(t2) )
 
+# tuple()
+t3 = tuple( "!@##$SD" )
+t4 = tuple( ["!@##$SD",1232,"SKDW"] )
+print( "Use tuple()\n ",t3, t4 )
+
+# Even thugh tuple is immutable, a list or dict in tuple can be changed as usual.
+t5 = ( 1, 2, "ABC", ["name", "age"], {'A':1,'B':2}, (100,200 ),{12,21,12,23} )
+print("t5 is ", t5 )
+t5[3][1] = "John"
+t5[4]['A'] = 100
+print(t5)
