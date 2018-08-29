@@ -1,0 +1,23 @@
+#!/usr/bin/python3.5
+
+f6 = open( "example_file_f1.txt", 'r' )
+
+# readline() read a line once. 
+print( "## readline() read a line once." )
+while True:
+	line = f6.readline()
+	if line:
+		print(line)
+	else:
+		break
+
+# readline() equals to below
+print( "## readline() equals to below: " )
+f6 = open( "example_file_f1.txt", 'r' )
+for line in f6:
+	print( line )
+
+# read() read all contents in file
+print( "## read() read all contents in file." )
+f6 = open( "example_file_f1.txt", 'r' )
+print( f6.read() )
