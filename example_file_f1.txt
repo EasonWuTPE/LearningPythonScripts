@@ -1,2 +1,0 @@
-This is f1.txt.
- And This is another line.

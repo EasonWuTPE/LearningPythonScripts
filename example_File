@@ -1,0 +1,23 @@
+#!/usr/bin/python3.5
+
+# File object
+
+# Open file
+f1 = open( "example_file_f1.txt", 'w' )
+f1.write( "This is f1.txt.\n And This is another line.\n" )
+f1.close()
+
+
+# Read file
+f1 = open( "example_file_f1.txt", 'r' )
+print( f1.read() )
+
+#print( f1.read().split() )
+
+# Read line
+for line in open( "example_file_f1.txt" ):
+	print( line )
+
+
+
+
