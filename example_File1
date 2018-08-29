@@ -1,0 +1,7 @@
+#!/usr/bin/python3.5
+
+f4 = open( "example_file_f1.txt", 'a+' )
+f4.write( "\n\nABC\n")
+f4.close() # must close before pointing to another file objects.
+f4 = open( "example_file_f1.txt", 'r' )
+print( f4.read() )

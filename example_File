@@ -1,23 +1,32 @@
 #!/usr/bin/python3.5
 
 # File object
-
+# Contents are string not objects.i
+# Files are buffered and seekable.
+# Close is often optional: auto-close on collection, like other type of objects would be reclaimed if not being refereced.
 # Open file
 f1 = open( "example_file_f1.txt", 'w' )
-f1.write( "This is f1.txt.\n And This is another line.\n" )
-f1.close()
+f1.write( "This is f1.txt.\n And This is another line.\n\n\nHellow." )
+f1.close() # must close before pointing to another file objects.
 
 
 # Read file
 f1 = open( "example_file_f1.txt", 'r' )
 print( f1.read() )
+print( f1.readline() )
 
 #print( f1.read().split() )
 
 # Read line
-for line in open( "example_file_f1.txt" ):
+f2 = open( "example_file_f1.txt" )# equals to pen( "example_file_f1.txt", 'r' )
+for line in f2:
 	print( line )
 
-
+# Open to input and output
+f3 = open( "example_file_f1.txt",'a+') # input and output 
+f3.write( "\nOpen, input and output.\n\n" )
+f3.close() # must close before pointing to another file objects.
+for lines in open( "example_file_f1.txt", 'r' ):
+	print( lines )
 
 
