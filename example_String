@@ -1,7 +1,7 @@
 #!/usr/bin/python3.5
 
 
-# Slice
+# Strings can be SLICED.
 print("-"*5+"slice"+"-"*5)
 string = "ABCDEFGHIGK"
 print( string[:] )

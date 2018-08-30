@@ -1,0 +1,31 @@
+#!/usr/bin/python3.5
+
+# File data is always strings in scripts, and .write() don't convert to str automatically.
+
+# Open and write data
+f2 = open( "example_file_2.txt", 'w' )
+x = 23
+str1 = "Eason"
+list1 = [1,2,3,4]
+dict1 = {'q':1,'b':2}
+# convert any type of objects to string
+f2.write( "My name is %s, and I am %s years old.\n" %( str1, x ) )
+f2.write( "The list1 is %s, dict1 is %s.\n" %( str(list1), str(dict1) ) )
+f2.close()
+
+print( open( "example_file_2.txt", 'r' ).read() )
+
+# Read file line by line i
+F3 = open( "example_file_2.txt")
+f3 = open( "example_file_2.txt").readline()
+f3.rstrip() # To get rid of the end-of-line character.
+print( f3 )
+print( open("example_file_2.txt").read() )
+print( f3.split() )
+
+# The usage of eval(), convert string to the its value
+list2 = "[1,2,3,4]"
+dict2 = "{'q':1,'b':2}"
+print(  eval( list2 ) )
+print(  eval( dict2 ) )
+

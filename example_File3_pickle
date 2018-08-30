@@ -1,0 +1,18 @@
+#!/usr/bin/python3.5
+
+# pickle module can store any objects in a file directly.
+
+D = { 'A':100, 'B':30, 'C':100202 }
+F = open( "example_file_pickle.pkl", 'wb' )
+
+import pickle
+pickle.dump( D, F ) # pickle any objects to file
+F.close()
+
+F = open( "example_file_pickle.pkl", 'rb' )
+E = pickle.load( F ) # load any objects from file
+print( E )
+
+# pickle module performs "object serializaion -- converting objects to and from string of bytes.
+
+
