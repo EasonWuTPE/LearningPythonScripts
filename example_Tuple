@@ -31,7 +31,7 @@ print(t5)
 # collections module
 import collections
 # namedtuple( typename, feild_names )
-# creat 
+# creat subclass tuple 
 Radius = collections.namedtuple( "radius", ['x','y'] )
 r = Radius( x=100,y=200 ) # or x = Radius(x=100,y=200)
 print("r is {}.".format(r) )
