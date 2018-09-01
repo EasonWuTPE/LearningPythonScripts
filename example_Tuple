@@ -27,3 +27,23 @@ print("t5 is ", t5 )
 t5[3][1] = "John"
 t5[4]['A'] = 100
 print(t5)
+
+# collections module
+import collections
+# namedtuple( typename, feild_names )
+# creat 
+Radius = collections.namedtuple( "radius", ['x','y'] )
+r = Radius( x=100,y=200 ) # or x = Radius(x=100,y=200)
+print("r is {}.".format(r) )
+print("r.x is {}.".format(r.x) ) # use "key"
+print("r[1] is {}.".format(r[1]) ) # use index
+
+Square = collections.namedtuple( "s", "length, wide" )
+Square = Square(100,200)
+print("Square is {}.".format(Square) )
+print("Square.length is {}.".format(Square.length) ) # use "key"
+print("Square[1] is {}.".format(Square[0]) ) # use index
+
+
+
+
