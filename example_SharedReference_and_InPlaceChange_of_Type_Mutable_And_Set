@@ -1,7 +1,7 @@
 #!/usr/bin/python3.5
 
 '''
-The shared reference and in-place change in mutable objects and set.
+The shared reference and in-place change in mutable objects, list, dict and set.
 '''
 
 L1 = [ 1,2,4 ]

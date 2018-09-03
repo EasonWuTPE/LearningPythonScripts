@@ -1,14 +1,14 @@
 #!/usr/bin/python3 
 '''  
 SET is neither sequence nor mapping. 
-It is an unordered collection of unique and immutable object.
+It is an unordered collection of unique and mutable object.
 Use { } or set( ) which only accept strings or list to make SET object.
 The concept of SET is the same as the "set" in Math.
 The elements of the SET wouldn't repeat, like "set" in Math.
 '''
 # Declare the set
 set0 = {} #The delcaration {} means that DICT, not SET
-set0_1 = set() # The right way to declare SET
+set0_1 = set() # The right way to declare SET, inside the () accept iteral.
 print( type(set0), type(set0_1) )
 print( "{}".format( set( "ASSAWQSS") ) )
 set1 = { 1, 2, 3, 'A', 'B' }

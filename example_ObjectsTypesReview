@@ -1,0 +1,13 @@
+#!/usr/bin/python3.5
+
+# Review the build-n data type.
+
+# PP.295-308
+
+# Compariason among the data type on P.302
+
+# The meaning of True and False in Pythom on P.304
+#	1. Numbers are False if 0, and True if 1.
+#		1.1 bool(0) = False, bool(1) = True.
+#	2. Other objects are False if empty, and True if non-empty. 
+#		2.1 bool("") = False, bool([1,2]) = True
