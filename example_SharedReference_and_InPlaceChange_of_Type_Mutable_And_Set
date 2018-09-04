@@ -56,4 +56,25 @@ X=[1,2,3]
 Y=[1,2,3]
 print( "X = Y = [1,2,3}" )
 print( "X is Y: {}.Not same object.".format( X is Y ) )
- 
+
+
+
+'''
+ Repition adds one level deep
+'''
+# Case 1
+L10 = [4,5,6]
+X10 = L10*1 # Make a copy
+Y10 = [L10]
+print( "L10:",L10, "X10:",X10, "Y10:",Y10 )
+L10[1] = 0
+print( "L10:",L10, "X10:",X10, "Y10:",Y10 ) # Impact only Y10
+Y10[0][0] = 100
+print( "L10:",L10, "X10:",X10, "Y10:",Y10 ) # Impact Y10 and L10
+
+# Case 2
+L11 = [4,5,6]
+Y11 = [L11]*3 # Make a copy of L11
+Y11[0][1] = 1000
+# Although Y11 doesn't share an object with L11, it still embeds four references to the same copy.
+print( "Y11:",Y11 )

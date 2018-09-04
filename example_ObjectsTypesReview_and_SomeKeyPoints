@@ -1,6 +1,6 @@
 #!/usr/bin/python3.5
 
-# Review the build-n data type.
+# Review the build-in data type.
 
 # PP.295-308
 
@@ -11,3 +11,5 @@
 #		1.1 bool(0) = False, bool(1) = True.
 #	2. Other objects are False if empty, and True if non-empty. 
 #		2.1 bool("") = False, bool([1,2]) = True
+
+# Some key points on PP.308-311
