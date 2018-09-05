@@ -1,0 +1,29 @@
+#!/usr/bin/python3.5
+
+# Use Try statements to handle Errors.
+
+# Method I: use if 
+''' Use if and while statements'''
+while True:
+	reply = input( ">>Input a number: ")
+	if reply == "stop":
+		break;
+	elif not reply.isdigit():
+		print( "Error!!" )
+	else:
+		print( int( reply ) **2 )
+print( "Bye!" )
+
+# Method II: Use Try, Except, Else Statements
+while True:
+	reply = input( "Enter>> " )
+	if reply == "stop":
+		break;
+	try:	
+		num = int( reply )
+	except: # if num run error
+		print( "Error!" )
+	else: # else is with try
+		print( num ** 2 )
+print( "Bye!" )
+	
