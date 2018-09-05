@@ -5,7 +5,7 @@
 # Method I: use if 
 ''' Use if and while statements'''
 while True:
-	reply = input( ">>Input a number: ")
+	reply = input( "1. Input a number>> ")
 	if reply == "stop":
 		break;
 	elif not reply.isdigit():
@@ -16,14 +16,26 @@ print( "Bye!" )
 
 # Method II: Use Try, Except, Else Statements
 while True:
-	reply = input( "Enter>> " )
+	reply = input( "2. Enter>> " )
 	if reply == "stop":
 		break;
-	try:	
+	try:
 		num = int( reply )
-	except: # if num run error
+	except: # if try statement runs into error
 		print( "Error!" )
-	else: # else is with try
+	else: # else is the same feild with try
 		print( num ** 2 )
+print( "Bye!" )
+
+	
+# Method III: No else 
+while True:
+	reply = input( "3. Enter>> " )
+	if reply == "stop":
+		break;
+	try:
+		print( int( reply )**2 )
+	except: # if try statement runs into error
+		print( "Error!" )
 print( "Bye!" )
 	
