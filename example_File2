@@ -23,9 +23,11 @@ print( f3 )
 print( open("example_file_2.txt").read() )
 print( f3.split() )
 
-# The usage of eval(), convert string to the its value
+# The usage of eval("str"), convert string to the its value and type.
 list2 = "[1,2,3,4]"
 dict2 = "{'q':1,'b':2}"
+dict3 = "1002"
 print(  eval( list2 ) )
 print(  eval( dict2 ) )
-
+print(  eval( dict3 ) )
+print(  eval( "2**10" ) )
