@@ -16,10 +16,9 @@ print( x, y, z, sep = "\n",end = "!\n", file = open("example_PrintOperation.txt"
 print( open("example_PrintOperation.txt").read() )
 
 #------------------------------------------------------------------#
-print(x,y)
-# Above equals to following
+
 import sys
-sys.stdout.write( str(x) + ' ' + str(y) + "\n" )
+sys.stdout.write( str(x) + ' ' + str(y) + "\n" ) # Same as print(x,y,file=stdout)
 
 # Redirection to file
 sys.stdout = open( "example_PrintOperation.txt",'a+' )
@@ -46,4 +45,6 @@ print("Back", file = sys.stdout)
 import sys
 sys.stderr.write( "Error!!" )
 
-
+# sys.stdin.readline() is same as input()
+A = sys.stdin.readline()
+print(A)
