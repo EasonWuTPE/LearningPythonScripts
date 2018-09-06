@@ -1,0 +1,44 @@
+#!/usr/bin/python3.5
+
+# Call format
+
+# print( [objects, ...][,sep=' '][,end='\n'][,file=sys.stdout][,flush=False] )
+# [ ] means optional, values after = means default, file(redirection) means the destination that you want to print out.
+# flush means ??
+
+x = "ABC"; y = 100; z = [1,2,3]
+print( x, y, z )
+
+print( x, y, z, sep = "\n",end = "!\n" )
+
+print( x, y, z, sep = "\n",end = "!\n", file = open("example_PrintOperation.txt",'w' ) ) # print to file.
+
+print( open("example_PrintOperation.txt").read() )
+
+#------------------------------------------------------------------#
+print(x,y)
+# Above equals to following
+import sys
+sys.stdout.write( str(x) + ' ' + str(y) + "\n" )
+
+# Redirection to file
+sys.stdout = open( "example_PrintOperation.txt",'a+' )
+print("\n", x, y )
+print( "SS" )
+sys.stdout.close() # sys.stdout is a normal file object. you should close it.
+
+#------------------------------------------------------------------#
+# Automatic redirection
+# sys.stdout is an normal file object, so it can be saved and restore it if needed
+
+import sys
+temp = sys.stdout   # save and restore later
+sys.stdout = open( "example_PrintOperation.txt",'a+') # Redirection to file
+print("Automatic Redirection.") # print to file not shell
+sys.stdout.close() # Close
+'''print("Back") ->run into error:"I/O operation in closed file" here, because of sys.stdout being closed.'''
+sys.stdout = temp # You need to restore sys.stdout before printing to terminal. This may work only on Python Interactive.
+print("Back", file = sys.stdout)
+
+
+

@@ -1,0 +1,7 @@
+ABC
+100
+[1, 2, 3]!
+
+ ABC 100
+SS
+Automatic Redirection.
