@@ -40,5 +40,10 @@ sys.stdout.close() # Close
 sys.stdout = temp # You need to restore sys.stdout before printing to terminal. This may work only on Python Interactive.
 print("Back", file = sys.stdout)
 
+#----------------------------------------------------------------#
+# sys.stderr
+
+import sys
+sys.stderr.write( "Error!!" )
 
 
