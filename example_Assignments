@@ -1,0 +1,92 @@
+#!/usr/bin/python3.5
+
+# Forms of assingments 
+
+# Case I
+x = "abc"
+print( x )
+
+# Case II
+x,y="as","sa" # Tuple assignments
+print( x, y )
+[x1,y1] = [100,200] # List assignments
+print( x1, y1 )
+x,y=100,200
+print( x ,y )
+
+# Case III Sequence assignments: right of = must be iterable objects.
+a,b,c,d = "ABCD" # **Names are assigned by position.
+print( a, b, c, d, sep=' ' )
+
+A,B,C = [1,2,3] # **Names are assigned by position.
+print( A,B, C, sep = ' ' )
+
+str1 = "assa"
+a,b,c= str1[0],str1[1],str1[2:]
+print( a, b ,c )
+
+# Case IV
+h=w="XYZ"
+print( h, w,sep=' ' )
+
+# Case V: Extended sequence unpacking ( any iteral objects ) 
+p,*k = 'ABE' # p is assigned A, *k is assigned the rest of objects in LIST form.
+print( "a is %s, *k is %s." %(a,k) )
+
+L = [1,2,3,4]
+*a,b,c = L
+print( a, b, c)
+
+a,*b,c = L
+print( a, b, c)
+
+a,b,*c =L
+print( a, b, c)
+
+'''
+ Extended sequence unpacking always return a list for multiple matched items.
+ Slice returns a sequence of the same type as the object sliced.
+'''
+'''
+ If nothin left to the starred name, it is assigned an empty list.
+'''
+a,b,c,*e = "ABS"
+print( a,b,c,e) 
+
+a,b,*e,c = "ABS"
+print( a,e,c,b)
+
+# Case VI: Multiple assgnment
+a=b=c = "SPAM" # One immutable object is shared by three names.
+print(a,b,c)
+a = "ABC"
+print(a,b,c)
+
+'''
+ Mutable objects, like set, list, dict, shared by names would ran into unexpected result.
+ Use tuple assignements or assigning separated to solve this problem.
+ Check the script "SharedReferenced_and_InPlaceChange_of_Type_Mutable_And_Set"
+'''
+g = h = i =[] # g,h,i point to the same mutable objects.
+print( g, h, i)
+i.append(100)
+print( g, h, i)
+
+
+# Case VII: Augmented assignments
+x = 100
+x+=x
+print( x )
+x = 100
+y = 200
+x+=y
+print( x ) # C doesn't have this
+
+
+''' '''
+L = [1,2,3]
+L +="ABC" # Legal, or use .extend("ABC"). 
+'''  L=L+"ABC" ''' # This ran error.
+print(L)
+
+
