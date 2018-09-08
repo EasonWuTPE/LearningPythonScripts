@@ -1,0 +1,32 @@
+#!/usr/bin/python3.5
+
+# No switch statement in Python.
+# Alternaltively, useing another way to replace switch
+
+# Method I
+# Use If statement
+
+
+# Method II: Dict-based
+choice = "John"
+dict1 = {"Eason":123,
+		 "John":112,
+		 "Merry":144 }
+
+print( {"Eason":123,
+		"John":112,
+		"Merry":144} [choice] )
+
+print( dict1.get(choice,"No Value" ) )
+
+
+# Method III: Try statement
+try:
+	print(dict1["ABC"])
+except KeyError: # What is KeyError??
+	print( "No value" )
+
+
+
+
+

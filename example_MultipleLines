@@ -1,0 +1,36 @@
+#!/usr/bin/python3.5
+
+# Multiple Lines
+
+# Method I: \
+'''	Not recomanded '''
+x = 1+2+3+4+\
+		5+6
+print(x)
+
+# Method II: '''
+str2 = '''
+		ABC
+		DEF
+		GHI
+	   '''
+print( str2 )
+
+# Method III: ( ): Comments here are ignored
+
+str3 = ( "abc"
+		 "def"
+		 "ghi"
+		)
+print( str3 ) 
+	
+# Method IV: [ ]
+L1 = [1,2,3,
+	  4,5,6]
+print(L1)
+
+# Method V: {}
+D1 = { 'a':100,
+	   'b':200,
+	 }
+print(D1)

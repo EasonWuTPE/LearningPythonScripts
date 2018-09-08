@@ -1,0 +1,24 @@
+#!/usr/bin/python3.5
+
+# Use __doc__ to print the docstring
+
+'''
+	This is the docstrings. Use __doc__ to print it.
+'''
+
+print( __doc__ )
+
+
+def PrintDocs():
+	'''
+		Print docstring in function.
+	'''
+
+
+str1 = "ABC"
+
+if str1=="ABC":
+	print(PrintDocs.__doc__)
+
+
+

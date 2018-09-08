@@ -1,0 +1,28 @@
+#!/usr/bin/python3.5
+
+# Nonzero int and non-empty objects return True, the other and None return False.
+# All objects have inherent Boolean true and false value.
+# Boolean stop evaluating as soon as a result is known.
+
+# Boolean "and" and "or" operators return a true or false "object".
+# "<", ">" and "==" return True or False "value" not "object".
+print( 2 < 4, 3==4 )
+
+
+
+# Boolean "and"
+
+# 2, 4 and 3 are non-empty objects, thet all true objects and return the "right" side.
+print( 2 and 4, 3 and 4 )
+# Evaluating from left to right and stops if left is a false objects, because of determining the result.
+print( {} and 3 , [] and {} )
+
+ 
+# Boolean "or"
+# 2, 4 and 3 are non-empty objects, thet all true objects and return the "left" side.
+print( 2 or 4, 3 or 4 )
+# Evaluating from left to right. If left is false object, it would continue to evaluate and return the right, because of not determining the result.
+print( {} or 3 , [] or {} )
+
+
+
