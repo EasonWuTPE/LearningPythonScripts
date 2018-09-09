@@ -90,3 +90,13 @@ L +="ABC" # Legal, or use .extend("ABC").
 print(L)
 
 
+
+#--------------------------------------------------------------------------------------#
+
+# Specail Case
+# or to assign names
+a,b,c = 100,200,""
+x = a or b or c # a is nonempty, so x is assigned to a
+print( x )
+x = c or a or b # c is empty, so x is assigned to a
+print( x )

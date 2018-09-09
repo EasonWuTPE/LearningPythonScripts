@@ -26,7 +26,27 @@ try:
 except KeyError: # What is KeyError??
 	print( "No value" )
 
+#---------------------------------------------------------------------------------#
+# If/Else Ternary Expression
+x = 100
+if x:
+	y = 100
+else:
+	y = 200
+print(y)
+''' equals to '''
+# Method I
+y = 100 if x else 200
+print(y)
 
+print( "ABC" ) if  y < 1000 else print( "Nothing!" )
+# Like C, printf( "%s\n",( y > 1000 )? "ABC":"Nothing!" );
+
+# Method II
+y = ["Nothing",100][bool("")]
+print( y )
+
+#----------------------------------------------------------------------------------#
 
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python3.5
 
 # Nonzero int and non-empty objects return True, the other and None return False.
-# All objects have inherent Boolean true and false value.
+# All objects have inherent Boolean True and False value.
 # Boolean stop evaluating as soon as a result is known.
 
 # Boolean "and" and "or" operators return a true or false "object".
