@@ -1,5 +1,9 @@
 #!/usr/bin/python3.5
 
+# Assignments are just a statements in Python.
+# It dosen't allow statements like assignments to appear in place where it expects an expressions.
+# Note: Statements control the procedure in program.
+# Note: Expressions are used to calculate things.
 # Forms of assingments 
 
 # Case I

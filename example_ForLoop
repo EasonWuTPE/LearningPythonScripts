@@ -1,0 +1,38 @@
+#!/usr/bin/python3.5
+
+# Tuple assignments in for loop 
+T = ( ('a',100), ('b',200), ('c',300) )
+
+# Method I
+for (key,val) in T:
+	print( key, val )
+
+# Method II
+for TwoVars in T:
+	key, val = TwoVars
+	print( key, val )
+
+# c.p.
+for (key,val) in [('a',100), ('b',200), ('c',300) ]:
+	print( key,val )
+
+# Extended sequence assignments in Python3.5
+for (a,*b,c) in [(123,123,234,345),(456,567,678,789)]:
+	print( a,b,c ) 
+
+# examples
+pool = [ 100,"asas",(12,304),"sww" ]
+target = ["asas", (12,10000)]
+for find in target:
+	for key in pool:
+		if find == key:
+			print( find, "was found" )
+			break
+	else:
+		print( find, "wasn\'t found") 
+''' Above is the same as below. '''
+for find in target:
+	if find in pool:
+		print(find,"was found.")
+	else:
+		print( find, "wasn't found." )
