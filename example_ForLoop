@@ -36,3 +36,9 @@ for find in target:
 		print(find,"was found.")
 	else:
 		print( find, "wasn't found." )
+
+# Specail Case Using ZIP()
+l = ['a','b','c']
+a = [100,200,300]
+for (key,val) in zip(l,a):
+	print(key,val)

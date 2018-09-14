@@ -1,0 +1,30 @@
+#!/usr/bin/python3.5
+
+# zip()
+# zip() in Python3 is a iterable object, so you have to wrap it to list or tuples or dict to display its results.
+L1 = [1,2,3]
+L2 = [3,4,5]
+L3 = [122,2122,12213,555]
+print( list(zip(L1,L2)) )
+print( dict(zip(L1,L2)) )
+print( tuple(zip(L1,L2)) )
+print( tuple(zip(L3,L2)) ) # zip() can truncates the length of the shortest sequence when the argument length diifer.
+
+for (key,val) in zip(L1,L2):
+	print( key, val )
+
+# map( function, iteral )
+# map() in Python3 is a iterable object, so you have to wrap it to list or tuples or dict to display its results.
+x1 = ['12','23','34','45','56']
+print( list( map(int, x1) ) )
+
+# enumerate() = ( index, val ) tuple
+# enumerate() in Python3 is a iterable object, so you have to wrap it to list or tuples or dict to display its results.
+seasons = ["Spring","Summer","Autumn","Winter"]
+for (offset,val) in enumerate(seasons):
+	print( offset, val ) 
+
+
+
+
+
