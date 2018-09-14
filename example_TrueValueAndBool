@@ -9,7 +9,6 @@
 print( 2 < 4, 3==4 )
 
 
-
 # Boolean "and"
 
 # 2, 4 and 3 are non-empty objects, thet all true objects and return the "right" side.
@@ -25,4 +24,23 @@ print( 2 or 4, 3 or 4 )
 print( {} or 3 , [] or {} )
 
 
+
+
+#-------------------------------------------------------------------#
+# Other important things
+i = 0
+x = [1,2,3]
+
+
+while x == True: # This means that value of x is equaled to True "VALUE"?
+	print( x )   # Obviously not. So it doesn't work.
+	i+=1
+	if i == 3:
+		break;
+
+while x:		 # This means that x is an True "OBJECT"?
+	print( x )	 # Obviously yes. So it works.
+	i+=1
+	if i == 3:
+		break;
 

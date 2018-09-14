@@ -1,0 +1,43 @@
+#!/usr/bin/python3.5
+
+# Break if a == 5
+a = 0
+print( "Break if a == 5" ) 
+while a < 10:
+	if a == 5:
+		break # Terminate the loop
+	print( a )
+	a += 1
+
+# Pass if a == 5
+a = 0
+print( "Pass if a == 5" ) 
+while a < 10:
+	if a == 5:
+		pass # Don't do anything
+	print( a )
+	a += 1
+
+
+# Continue if a == 5
+a = 0
+print( "Conitnue when a == 5" ) 
+while a < 10:
+	a+=1
+	if a == 5:
+		continue # skip this loop and execute next loop
+	print( a-1 )
+
+
+
+# exit() if a == 5
+a = 0
+print( "exit() if a == 5" ) 
+while a < 10:
+	if a == 5:
+		exit() # terminate the program	
+	print( a )
+	a += 1
+
+
+
