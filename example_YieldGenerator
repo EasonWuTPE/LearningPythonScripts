@@ -1,7 +1,14 @@
 #!/usr/bin/python3.5
 
 # yeild
-
+'''
+yield 和 return 很像，
+只是當函數呼叫 return 時，該函數 call stack (python 中是 frame) 就會被清除，
+程式主導權回到呼叫該函數的手上。 
+而 yield 會把程式主導權交給呼叫該函數的手上，
+但是他不會把函數的 call stack 清除，
+因此下次呼叫時，可以從上次未執行的部分開始執行，而不是重新建立一個新 stack。
+'''
 
 def myIterable(X):
 	x = 0;
