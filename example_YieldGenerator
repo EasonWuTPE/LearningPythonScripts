@@ -1,0 +1,16 @@
+#!/usr/bin/python3.5
+
+# yeild
+
+
+def myIterable(X):
+	x = 0;
+	while x<=X:
+		yield x**2
+		x+=1
+
+for num in myIterable(10):
+	print( num, end = "\t" )
+
+print( "\n" )	
+
