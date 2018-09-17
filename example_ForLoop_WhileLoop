@@ -1,5 +1,7 @@
 #!/usr/bin/python3.5
 
+# For loop in Python is an assignment iteration, while in Python is an True or False value identity.
+
 # Tuple assignments in for loop 
 T = ( ('a',100), ('b',200), ('c',300) )
 
