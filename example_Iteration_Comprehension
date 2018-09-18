@@ -12,7 +12,7 @@
 	If xxx is a traversal and iterable object, using function next() or method .__next__() to traverse until the it returns the StopIteration.
 '''
 
-# List, Dict, range(), str, tuple, file, zip(), map() and set are iterable.
+# List, Dict, range(), str, tuple, file, zip(), map(), enumerate() and set are iterable.
 
 '''
 it1 = iter( 123 ) # 123 is not iterable, lead to error.
