@@ -21,3 +21,13 @@ for line in f6:
 print( "## read() read all contents in file." )
 f6 = open( "example_file_f1.txt", 'r' )
 print( f6.read() )
+
+# readlines() reads file into list all at once.
+f7 = open( "example_file_f1.txt", 'r' )
+print( f7.readlines() )
+
+# .rstrip() to remove the whitespace or \n in strings
+line = open( "example_file_f1.txt", 'r' )
+lines = [ lines.rstrip() for lines in line ]
+print( "%s" %("Remove \"\\n\" by .rstrip()") )
+print( lines )

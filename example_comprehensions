@@ -27,3 +27,35 @@ dic4 = { key: val for ( key, val) in zip( ['a','b','c'], [1,2,3] ) }
 print( "The dic4 is {}.".format(dic4) )
 dic5 = { x: x**2 for x in range(6) }
 print( "The dic5 is {}.".format(dic5) )
+
+#-----------------------------------------------------------------#
+
+L = [ 1,2,3 ]
+L = [ x+10 for x in L ]
+print( L )
+''' equals to '''
+L = [1,2,3]
+for x in range(len(L)):
+	L[x]+=10
+print( L )
+
+
+#----------------------------------------------------------------#
+L = [ x+y for x in "ABC" for y in "abc"]
+print( L )
+
+#----------------------------------------------------------------#
+L = [ lines for lines in open("script1.txt") ] 
+print(L)
+
+#----------------------------------------------------------------#
+L = list( map( str.upper, open("script1.txt") ) )
+print( L )
+
+#-----------------------------------------------------------------#
+L = list(range(10))
+L1 = [range(10)]
+print( L,"v.s." ,L1 )
+
+
+

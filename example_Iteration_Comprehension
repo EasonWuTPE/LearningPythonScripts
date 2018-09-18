@@ -7,12 +7,11 @@
 	In for loop e.g. for i in xxx, using iter(xxx) to get the iterator. If xxx has the method  __iter__(), it means xxx is iterable, if not, xxx cannot be traversed.
 
 
-
-	2. Start to traverse by func. next(xxx) or method .__next__():
-	If xxx is a traversal and iterable object, using function next() or method .__next__() to traverse until the it returns the StopIteration.
+	2. Start to traverse the iterator by func. next(xxx) or method .__next__():
+	If xxx is a traversal and iterable object, using function next() or method .__next__() to traverse iterator that gotten from iter() until the it returns the StopIteration.
 '''
 
-# List, Dict, range(), str, tuple, file, zip(), map(), enumerate() and set are iterable.
+# list, dict, range(), str, tuple, file, zip(), map(), enumerate() and set are iterable.
 
 '''
 it1 = iter( 123 ) # 123 is not iterable, lead to error.
@@ -20,7 +19,7 @@ print( it1 ) # it1 is not a iterator.
 '''
 
 print( [1,2,3].__iter__() ) # Whether [1,2,3] has attribute __iter__()
-it2 = iter([1,2,3]) # [1,2,3] is iterable.
+it2 = iter([1,2,3]) # [1,2,3] is iterable. it2 is iterator
 print(it2) # it2 is an list iterator.
 print( it2.__next__() )
 print( next(it2) )
@@ -35,7 +34,8 @@ print( next(it3) )
 print( next(it3) )
 print( next(it3) )
 
-# Some objects are both iterator and iterable.
+#-----------------------------------------------------------------------#
+# Some objects, like file, are both iterator and iterable.
 '''
   File objects support just one iteration, they can't seek backward to support multiple active scans.
   File objects have their own __next__() method and don't need to return a different object. 
@@ -45,12 +45,68 @@ print( f is iter(f) ) # f and iter(f) is iterator.
 print( f.__iter__() is iter(f) )  
 print( f.__iter__() is f )  
 
+# zip() is both iterator and iterable.
+Z = zip( [1,2,3], [4,5,6] )
+print( Z is iter(Z) ) 
+ 
+# filter() is both iterator and iterable.
+F = filter( bool, [12,21,"AS",'a','',0] )
+print( F is iter(F) )
+
+# map() is both iterator and iterable.
+M = map( int, "123" )
+print( M is iter(M) )
+
+# enumerate() is both iterator and iterable.
+E = enumerate( [1,2,3] )
+print( E is iter(E) )
+
+'''
+ zip(), filter(), enumerate() and map() do not produce a result list all at once in memory. They are not only iterable, but also return iterable results in Python3.X and they are their own iteratirs.
+'''
+
+#------------------------------------------------------------------------#
 # List and many other built-in objects are not their own iterators because they di support multiple open iterations--for example, there may be multiple iterations in nested loops all at different positions. So it must call iter() to start iterating.
 L = [1,2,3]
 print( iter(L) is L ) # L is list, iter(L) is iterator
 
+# range() is not iterator but iterable.
+R = range( 10 )
+print( R.__next__() ) 
+# range is not iterator itself, if you want to traverse it ny next() or __next__(), you must to find its iterators by iter(R) in advanced.
+print( R is iter(R) )
+R1 = iter(R) # range(3) is iterable.
+print( R1 ) # it3 is an list iterator.
+print( R1.__next__() )
+print( next(R1) )
+print( next(R1) )
+print( next(R1) )
+
+#-----------------------------------------------------------------------#
+#Multiple iterators
+R1 = range(4)
+r1, r2 = iter(R1), iter(R1)
+print( "r1 and r2 are two different iterable objects." )
+print( next(r1) ) # 0
+print( next(r1) ) # 1
+print( next(r2) ) # 0
+print( next(r2) ) # 1
+print( next(r1) ) # 2
+
+# Single iterators: zip(), map()
+M = map( abs, (-1,10,-212) )
+M1, M2 = iter(M), iter(M)
+print( "M1 and M2 are the same iterable objects." )
+print( next(M1), next(M1), next(M2) ) # 1 10 212
+
+Z = zip( (1,2,3), (-1,10,-212) )
+Z1, Z2 = iter(Z), iter(Z)
+print( "Z1 and Z2 are the same iterable objects." )
+print( next(Z1), next(Z1), next(Z2) ) # (1,-1) , (2,10), (3,212)
 
 
+
+#-----------------------------------------------------------------------#
 # Comprehension
 
 
