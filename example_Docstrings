@@ -21,4 +21,13 @@ if str1=="ABC":
 	print(PrintDocs.__doc__)
 
 
+# Print documentation of the built-in function by .__doc__
+print( int.__doc__ )
+print( zip.__doc__ )
+
+
+
+# pydoc
+# $ pydoc <modulename>
+# help( XXXX ) in interactive prompt
 
