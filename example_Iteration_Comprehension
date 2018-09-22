@@ -21,10 +21,10 @@ print( it1 ) # it1 is not a iterator.
 print( [1,2,3].__iter__() ) # Whether [1,2,3] has attribute __iter__()
 it2 = iter([1,2,3]) # [1,2,3] is iterable. it2 is iterator
 print(it2) # it2 is an list iterator.
-print( it2.__next__() )
-print( next(it2) )
-print( next(it2) )
-print( next(it2) )
+print( it2.__next__() ) # 1
+print( next(it2) ) # 2
+print( next(it2) ) # 3
+#print( next(it2) ) # StopIteration
 
 print(range(30).__iter__()) # Whether range(3) has attribute __iter__()
 it3 = iter(range(3)) # range(3) is iterable.
@@ -32,7 +32,7 @@ print(it3) # it3 is an list iterator.
 print( it3.__next__() )
 print( next(it3) )
 print( next(it3) )
-print( next(it3) )
+#print( next(it3) ) # StopIteration
 
 #-----------------------------------------------------------------------#
 # Some objects, like file, are both iterator and iterable.

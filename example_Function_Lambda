@@ -1,6 +1,70 @@
 #!/usr/bin/python3.5
 
+'''
 # def
 
+	def is executable code, it creates an function object and assigns it to the function names. i.e. a function name is a reference to the function object.
+
+	def name( arg1, arg2, arg3, ... ):
+		statements
+		[return statement]
+
+	It is a statement in Python, so it can appear anywhere , even nested in other statements. Statements in Python are not allow to appear in place where it expects an expressions.
+		
+	if X:
+		def func():
+	else:
+		def func1():
+	...
+
+	
+
+'''	
+
+'''	
 # lambda 
+
+	lambda creates an object but return it as a result.It allows to in-line function definitions in places.
+
+'''
+
+'''
+# return
+
+	It sends a result object back to caller, which is different from lambda that returns an object as a result that can be used in direct.
+
+'''
+
+'''
+# yeild
+
+	When function reach "return", it return an object to caller and is removed from stack.Whereas, "yield" return an object but isn't removed from stack that can be reused later.
+	Yield is a generator that can be used user-defined iterable objects.
+
+'''
+
+'''
+# "global" variable 
+
+	It is the module-level variables. By default, variables assigned in function are locally and removed when function reaches "return".
+
+'''
+
+'''
+# nonlocal variables
+
+	It only exist in function scope.
+
+'''
+
+'''
+# Arguments are called by referenced
+
+	Arguments are passed by referenced, which the mutable data types should be more carefull when objects are shared with the same reference.
+
+'''
+
+
+
+
 
