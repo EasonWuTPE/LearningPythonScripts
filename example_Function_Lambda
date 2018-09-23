@@ -38,24 +38,64 @@
 '''
 # yeild
 
-	When function reach "return", it return an object to caller and is removed from stack.Whereas, "yield" return an object but isn't removed from stack that can be reused later.
+	When function reach "return", it returns an object to caller and is removed from stack.Whereas, "yield" return an object but isn't removed from stack that can be reused later.
 	Yield is a generator that can be used user-defined iterable objects.
 
 '''
 
 '''
-# "global" variable 
+# Scope
+	
+	The place where you assign a name in source code determines the namespace it will live in, and hence its scope of visibility.
+	i.e. Python uses the location of the assignment of a name to associate it with a particular namespace.
+	
+	Names assigned inside a "def" can only be seen by the code within that "def". You cannot even refer to such names from outside the function. Names assigned in a "def" do not clash with variables outside the"def", even the same names are used elsewhere.
+	
+	Assigned names are local unless declared global or nonglobal. Python would find the variables from the scope of Built-in, Global, Enclosing function or Local function.
 
-	It is the module-level variables. By default, variables assigned in function are locally and removed when function reaches "return".
+	# "global" variable 
 
+		It is the module-level variables. By default, variables assigned in function are locally and removed when function reaches "return".
+
+
+	# "local" variables
+
+		It only exist in function scope.
+
+	# "nonlocal" variables in 3.X
+		
+		
+
+	# "build-in" variables
+		
+		Build-in vars in 3.X are pocessed by all module automatically.
+		>>>import builtins
+		>>>dir(builtins)
 '''
 
-'''
-# nonlocal variables
+# Case 1: Local
+X = 99; L = 100 # global
+def func(): X = 88; print(X, L) # X here is local in func. L which is global here isn't assigned within func so it would find L outside the func.
+func()
+print( X, L ) # X here is global in module
 
-	It only exist in function scope.
+# Case 2: Global
+def func2(): 
+	global X; X+=10; print(X) # The X in func2 is declared "globally"
+func2()
+print(X) # X has changed, due to the global X in func1
 
-'''
+# Case 3: Nonlocal
+X = 10
+def outer():
+	X = 100
+	def inner():
+		nonlocal X; X = 10000
+	inner()
+	print( X )
+outer() # X is nonlocal
+print(X) # X is global
+
 
 '''
 # Arguments are called by referenced

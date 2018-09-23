@@ -1,0 +1,10 @@
+#!/usr/bin/python3.5
+
+# int( expression )
+I = list( range( 11 ) )
+print(I)
+L =[]
+for i in I:
+	L.append( int( i != 0 ) )
+
+print( L )
