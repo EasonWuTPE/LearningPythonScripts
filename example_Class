@@ -1,0 +1,37 @@
+#!/usr/bin/python3.5
+
+# Class
+
+class Spec():
+
+	def __init__( self, manufactor, year, name ):
+		self.manufactor = manufactor
+		self.year = year
+		self.name = name
+
+	def Brand( self ):
+		return self.manufactor
+
+	def Year( self ):
+		return self.year
+
+	def Name( self ):
+		return self.name
+
+	def emission( self, amount ):
+		self.emit = amount
+
+	def Speed( self, speed ):
+		self.speed = speed
+
+	def Record( self ):
+		self.record = "6:47.3"
+
+c = Spec( "Porsche", 2017, "GT2RS" )
+c.emission( "3.4L" )
+c.Speed("340km/h")
+c.Record()
+print( c.manufactor, c.year, c.name )
+print( c.emit )
+print( c.speed )
+print( c.record ) 
