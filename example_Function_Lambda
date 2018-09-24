@@ -58,7 +58,8 @@
 		Build-in vars in 3.X are pocessed by all module automatically.
 		>>>import builtins
 		>>>dir(builtins)
-
+	
+	
 # Other Scope
 	
 	1. comprehensions
@@ -89,6 +90,7 @@ def outer():
 	print( X )
 outer() # X is nonlocal
 print(X) # X is global
+''' global and nonlocal are kind of declaration. In fact, they are namespace declaration. '''
 
 # Case 4: built-in
 import builtins
