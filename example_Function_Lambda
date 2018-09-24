@@ -2,13 +2,10 @@
 
 '''
 # def
-
 	def is executable code, it creates an function object and assigns it to the function names. i.e. a function name is a reference to the function object.
-
 	def name( arg1, arg2, arg3, ... ):
 		statements
 		[return statement]
-
 	It is a statement in Python, so it can appear anywhere , even nested in other statements. Statements in Python are not allow to appear in place where it expects an expressions.
 		
 	if X:
@@ -16,31 +13,23 @@
 	else:
 		def func1():
 	...
-
 	
-
 '''	
 
 '''	
 # lambda 
-
 	lambda creates an object but return it as a result.It allows to in-line function definitions in places.
-
 '''
 
 '''
 # return
-
 	It sends a result object back to caller, which is different from lambda that returns an object as a result that can be used in direct.
-
 '''
 
 '''
 # yeild
-
 	When function reach "return", it returns an object to caller and is removed from stack.Whereas, "yield" return an object but isn't removed from stack that can be reused later.
 	Yield is a generator that can be used user-defined iterable objects.
-
 '''
 
 '''
@@ -51,12 +40,11 @@
 	
 	Names assigned inside a "def" can only be seen by the code within that "def". You cannot even refer to such names from outside the function. Names assigned in a "def" do not clash with variables outside the"def", even the same names are used elsewhere.
 	
-	Assigned names are local unless declared global or nonglobal. Python would find the variables from the scope of Built-in, Global, Enclosing function or Local function.
+	Assigned names are local unless declared global or nonglobal. Python would find the variables from the scope of Local function,Enclosing function, Global and Built-in in order, The LEGB Rule.
 
 	# "global" variable 
 
 		It is the module-level variables. By default, variables assigned in function are locally and removed when function reaches "return".
-
 
 	# "local" variables
 
@@ -65,12 +53,18 @@
 	# "nonlocal" variables in 3.X
 		
 		
-
 	# "build-in" variables
 		
 		Build-in vars in 3.X are pocessed by all module automatically.
 		>>>import builtins
 		>>>dir(builtins)
+
+# Other Scope
+	
+	1. comprehensions
+	2. try statements
+	3. Class statements
+
 '''
 
 # Case 1: Local
@@ -96,14 +90,26 @@ def outer():
 outer() # X is nonlocal
 print(X) # X is global
 
+# Case 4: built-in
+import builtins
+print(dir(builtins))
+
+# Notes: 
+'''
+	Names in Local scope may override vaiables of same name of both global and built-in scope.
+'''
+def spam():
+	open = "ABC"
+	print( open )
+	f = open("script1.txt") # run into error, because of local var "open" override the built-in var "open".
+	print( f.read() )
+
+spam()
 
 '''
 # Arguments are called by referenced
-
 	Arguments are passed by referenced, which the mutable data types should be more carefull when objects are shared with the same reference.
-
 '''
-
 
 
 
