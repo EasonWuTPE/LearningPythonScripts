@@ -1,7 +1,7 @@
 #!/usr/bin/python3.5
 
-'''
 # def
+'''
 	def is executable code, it creates an function object and assigns it to the function names. i.e. a function name is a reference to the function object.
 	def name( arg1, arg2, arg3, ... ):
 		statements
@@ -16,31 +16,31 @@
 	
 '''	
 
-'''	
 # lambda 
+'''
 	lambda creates an object but return it as a result.It allows to in-line function definitions in places.
 '''
 
-'''
 # return
+'''
 	It sends a result object back to caller, which is different from lambda that returns an object as a result that can be used in direct.
 '''
 
-'''
 # yeild
+'''
 	When function reach "return", it returns an object to caller and is removed from stack.Whereas, "yield" return an object but isn't removed from stack that can be reused later.
 	Yield is a generator that can be used user-defined iterable objects.
 '''
 
-'''
 # Scope
+'''
 	
 	The place where you assign a name in source code determines the namespace it will live in, and hence its scope of visibility.
 	i.e. Python uses the location of the assignment of a name to associate it with a particular namespace.
 	
 	Names assigned inside a "def" can only be seen by the code within that "def". You cannot even refer to such names from outside the function. Names assigned in a "def" do not clash with variables outside the"def", even the same names are used elsewhere.
 	
-	Assigned names are local unless declared global or nonglobal. Python would find the variables from the scope of Local function,Enclosing function, Global and Built-in in order, The LEGB Rule.
+	Assigned names are local unless declared global or nonglobal. Python would find the variables from the scope of Local function,Enclosing function, Global and Built-in in order, so called "The LEGB Rule".
 
 	# "global" variable 
 
@@ -51,7 +51,8 @@
 		It only exist in function scope.
 
 	# "nonlocal" variables in 3.X
-		
+	
+		Nonlocal applies to a name un an enclosing function's scope, not the module outside all def. This is, nonlocal name must already exist in the enclosing function's scope when declared.
 		
 	# "build-in" variables
 		
