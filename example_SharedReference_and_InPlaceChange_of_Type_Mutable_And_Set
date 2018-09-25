@@ -2,6 +2,8 @@
 
 '''
 The shared reference and in-place change in mutable objects, list, dict and set.
+ ***note***
+ 	passing mutable argument to function may make in-place change. 
 '''
 
 L1 = [ 1,2,4 ]
@@ -21,6 +23,15 @@ print( "Change L1[0] to 1000, then the result of L1 and L2 is:\
 {},{}.".format( L1,L2)) 
 print( "The content of L2 do change.")
 
+# Case 3 #
+L = [1,2,3]
+def change(X):
+	X[0]=1020
+	print("In function: {}".format( X ) )
+
+change(L) # pass reference to function change. i.e. L shares reference with argument X.
+print( L )
+change( [1,2,3] ) # No share reference.
 '''
 	Use "copy" not reference to avoid this.
 '''
@@ -58,6 +69,31 @@ print( "X = Y = [1,2,3}" )
 print( "X is Y: {}.Not same object.".format( X is Y ) )
 
 
+'''
+	Avoiding passing mutable arguments by slicing
+'''
+L = [1,2,3]
+def change(X):
+	X[0]=1020
+	print("In function: {}".format( X ) )
+
+print("Avoiding passing mutable arguments")
+change(L[:]) # Make a slicing to the argument to pass to function
+print( L )
+  
+'''
+	Avoiding passing mutable arguments by copy
+'''
+import copy
+L = [1,2,3]
+def change(X):
+	X[0]=1020
+	print("In function: {}".format( X ) )
+
+print("Avoiding passing mutable arguments")
+change(copy.copy(L)) # Make a slicing to the argument to pass to function
+print( L )
+ 
 
 '''
  Repition adds one level deep

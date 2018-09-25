@@ -109,11 +109,54 @@ def spam():
 
 spam()
 
-'''
+
+
 # Arguments are called by referenced
+'''
 	Arguments are passed by referenced, which the mutable data types should be more carefull when objects are shared with the same reference.
+	
+	**Mutable objects passed by pointer
+		because of shareing the same objects, like passing array in C.
+
+	**"Immutable" objects are passed by "VALUE". 
+		Immutable bojects are also passed by pointer actually but you cannot change the value in-place, so it acts more like passed by value.
+
+***note***
+ 	passing mutable argument to function may make in-place change. 
 '''
 
+# passing object by reference means share reference.
+L = [1,2,3]
+def change(X):
+	X[0]=1020
+	print("In function: {}".format( X ) )
 
+change(L) # pass reference to function change. i.e. L shares reference with argument X.
+print( L )
+change( [1,2,3] ) # No share reference.
 
+'''
+	Avoiding passing mutable arguments by slicing
+'''
+L = [1,2,3]
+def change(X):
+	X[0]=1020
+	print("In function: {}".format( X ) )
 
+print("Avoiding passing mutable arguments")
+change(L[:]) # Make a slicing to the argument to pass to function
+print( L )
+ 
+'''
+	Avoiding passing mutable arguments by copy
+'''
+import copy
+L = [1,2,3]
+def change(X):
+	X[0]=1020
+	print("In function: {}".format( X ) )
+
+print("Avoiding passing mutable arguments")
+change(copy.copy(L)) # Make a slicing to the argument to pass to function
+print( L )
+ 
