@@ -159,4 +159,11 @@ def change(X):
 print("Avoiding passing mutable arguments")
 change(copy.copy(L)) # Make a slicing to the argument to pass to function
 print( L )
- 
+
+# Arguments passed by keywords, assignment and position
+def Key( a, b=1, c=20 ):
+	print( a, b, c )
+
+Key( 20, 30, 50 ) # Passed by position
+Key( 2, 6 ) # a and b are passed by position, c is passed by default
+Key( 3, c = 90, b = 600 ) # a is passed by position, b and c are passed by name(assingment) no matter the left-to-right order.

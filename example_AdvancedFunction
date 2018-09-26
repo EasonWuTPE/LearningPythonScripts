@@ -1,0 +1,51 @@
+#!/usr/bin/python3.5
+
+# Advanced Function
+
+# Recursive
+def MySum( L ):
+	if not L:
+		return 0
+	else:
+		return L[0] + MySum( L[1:] )
+
+print( MySum( list(range(11) ) ) )
+
+def MyFactorial( num ):
+	if not num-1:
+		return 1
+	else:
+		return num * MyFactorial( num-1 )
+
+print( MyFactorial( 10 ) )
+
+''' Alternative '''
+def MySum_A( L ):
+	return 0 if not L else L[0] + MySum_A( L[1:] )
+
+print( MySum_A( list( range(11) ) ) )
+
+def MyFactorial_A( num ):
+	return 1 if not num-1 else num*MyFactorial_A(num-1)
+
+print( MyFactorial_A( 10 ) )
+
+''' Alternative '''
+def MySum_B( L ):
+	first, *rest = L
+	return 0 if not rest else first + MySum_B( rest )
+
+print( MySum_B( list( range(11) ) ) )
+
+''' Alternative ''' 
+def MySum_C( first, *rest ):
+	''' This doesn't work at all,
+		because it expects receives individual argument not iterable
+	'''
+	return 0 if not rest else first + MySum_C( rest )
+
+print( MySum_C( list(range(10) ) ) )
+
+
+
+
