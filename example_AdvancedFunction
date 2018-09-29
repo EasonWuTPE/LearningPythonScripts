@@ -2,6 +2,8 @@
 
 # Advanced Function
 
+''' Some points are mentioned in the script "example_Function_Scope_Arg". '''
+
 # Recursive
 def MySum( L ):
 	if not L:
@@ -47,5 +49,34 @@ def MySum_C( first, *rest ):
 print( MySum_C( list(range(10) ) ) )
 
 
+# Function introspection
+''' 
+	>>$ func.__name___
+		# the name of function
+	>>$ dir( func )
+		# Check the attributes of the function
+	>>$ func.__code__
+		# This tools allow us to explore implementation detail -- functions have attached "code objects", which povide details on aspects such as the functions' local variables and arguments. 
+	>>$ dir( func.__code__ )
+	>>$ func.__code__.co_varnames
+		# This shows the variables of the function.
+	>>$ func.__code__.co_argcount
+		# This shows the amount of the arguments of the function.
+'''
+
+# Function Attributions
+'''
+	Besides the built-in attributes, function also can attach the user-defined attributes as well
+	The all internal names( attributes ) are named after double underscores (__X__ ) in order to avoid clashing the names defined by user.
+	The built-in attributes of function is a way to emulate "statics local" variables in other languages, whoes names are local to a function but retain after the function exits and killed when program terminates.	
+'''
+def PrintABC( n ):
+	print( "ABC"*n )
+print( dir(PrintABC) ) # built-in attributes
+''' User-defined attributes '''
+PrintABC.count = 0
+PrintABC.length = len( "ABC" )
+print( dir(PrintABC) ) # add user-defined attributes
+print( PrintABC.length ) # Print the value of user-defined attribute
 
 

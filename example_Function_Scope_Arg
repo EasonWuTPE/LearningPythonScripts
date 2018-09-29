@@ -13,8 +13,54 @@
 	else:
 		def func1():
 	...
-	
+
+Notes:
+	1. Function objects can be assigned to names and can be called directly and indirectly.
+	2. Function can be passed to other functions as argument.
+	3. Functions can be embeded in data structure.
+	4. Functions can be created and returned for use elsewhere.
+
 '''	
+def Call( args ):
+	print( args )
+
+Call( "directly call" ) # Call functions directly
+X = Call # X references Call and calls function indirectly
+X( "Indirectly call" )
+
+''' 
+	Pass function to other functions as arguements.
+'''
+def PassFunc( func, strings ):
+	func( strings )
+
+PassFunc( Call, "Pass functions" )
+'''
+	Embeded in data structure.
+'''
+L = [ ( Call, "Embeded I" ), ( Call, "Embeded II" ) ]
+for ( func, args ) in L:
+	func( args )
+
+'''
+	Functions can be created and returned for use elsewhere.	
+'''
+def outer( label ):
+	def inner( message ):
+		print( message*label )
+	return inner
+
+Out = outer( 3 )
+Out( "Spam" )
+
+''' or '''
+def outer( label ):
+	def inner( message ):
+		print( message*label )
+	inner( "Hi" )
+
+outer( 2 )
+
 
 # lambda 
 '''
