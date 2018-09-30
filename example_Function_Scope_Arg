@@ -2,7 +2,7 @@
 
 # def
 '''
-	def is executable code, it creates an function object and assigns it to the function names. i.e. a function name is a reference to the function object.
+	def is executable code, it creates an function object and assigns it to the function names which is the name of the function. i.e. a function name is a reference to the function object.
 	def name( arg1, arg2, arg3, ... ):
 		statements
 		[return statement]
@@ -16,12 +16,12 @@
 
 Notes:
 	1. Function objects can be assigned to names and can be called directly and indirectly.
-	2. Function can be passed to other functions as argument.
-	3. Functions can be embeded in data structure.
-	4. Functions can be created and returned for use elsewhere.
+	2. Function objects can be passed to other functions as argument.
+	3. Function objects can be embeded in data structure.
+	4. Function objects can be created and returned for use elsewhere.
 
 '''	
-def Call( args ):
+def Call( args ): # Call is the name of the function objects
 	print( args )
 
 Call( "directly call" ) # Call functions directly
@@ -64,13 +64,41 @@ outer( 2 )
 
 # lambda 
 '''
-	lambda creates an object but return it as a result.It allows to in-line function definitions in places.
+	lambda arg1, arg2,..., argN : expression using args
+
+	lambda creates an object but return it as a result. It allows to in-line function definitions in places.
+	1. Lambda is an expression not a statement whom def is. With def, functions can br referenced by names but must be created elsewhere. As an expression, lambda returns value that can optionally be assigned a name. By contrast, def always assigns the new function to the name in the header, instead of returning it as a result.
+	2. Lambda is a single expression. It is designed for coding simple functions and def handles larger tasks.
+	3. lambda returns a function object not assigning it to a name. Assigning to a nmae is optional.
 '''
+R = range(1,11)
+sqrName = map( lambda x: x**2, R )
+print( list(sqrName) )
+
+''' It returns a function '''
+f = lambda x, y, z: x+y+z
+print( f(1,2,3) )
+
+''' Like def, the arguments can be default. '''
+x = ( lambda a="ABC", b="DEF", c="GHI": a+b+c ) 
+print( x("abc") )
+
+''' Lambda can be nested in def, which follows LEGB rule. '''
+def knight():
+	title = "Sir"
+	Name = ( lambda name: title + ' ' + name )
+	return Name
+
+Name_ = knight()
+print( Name_( "John" ) )
+
+
 
 # return
 '''
 	It sends a result object back to caller, which is different from lambda that returns an object as a result that can be used in direct.
 '''
+
 
 # yeild
 '''

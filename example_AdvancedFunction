@@ -99,3 +99,41 @@ print( "With annotations: %d" %(sum_Annotations( 1,2,3 )) )
 print( "func.__annotations__ in dict form: %s " %( sum_Annotations.__annotations__ ) )
 
 
+# lambda 
+'''
+	lambda arg1, arg2,..., argN : expression using args
+
+	lambda creates an object but return it as a result. It allows to in-line function definitions in places.
+	1. Lambda is an expression not a statement whom def is. With def, functions can br referenced by names but must be created elsewhere. As an expression, lambda returns value that can optionally be assigned a name. By contrast, def always assigns the new function to the name in the header, instead of returning it as a result.
+	2. Lambda is a single expression. It is designed for coding simple functions and def handles larger tasks.
+	3. lambda returns a function object not assigning it to a name. Assigning to a nmae is optional.
+'''
+
+R = range(1,11)
+sqrName = map( lambda x: x**2, R )
+print( list(sqrName) )
+
+''' It returns a function '''
+f = lambda x, y, z: x+y+z
+print( f(1,2,3) )
+
+''' Like def, the arguments can be default. '''
+x = ( lambda a="ABC", b="DEF", c="GHI": a+b+c ) 
+print( x("abc") )
+
+''' Lambda can be nested in def, which follows LEGB rule. '''
+def knight():
+	title = "Sir"
+	Name = ( lambda name: title + ' ' + name )
+	return Name
+
+Name_ = knight()
+print( Name_( "John" ) )
+
+
+
+
+
+
+
+
