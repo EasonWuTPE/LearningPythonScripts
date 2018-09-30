@@ -80,3 +80,22 @@ print( dir(PrintABC) ) # add user-defined attributes
 print( PrintABC.length ) # Print the value of user-defined attribute
 
 
+# Function Annotations in 3.X
+'''
+	Attach annotation information to a function object, which arbitrary user-defined data about a function's arguments and result. When present are simply attached to the function object's .__annotations__ attribute for use by other tools.
+	Function annotations are coded in def header lines.
+'''
+''' Here is normal function below. '''
+def sum_noAnnotations( a, b, c ):
+	return a + b + c
+
+print( "No annotations: %d" %(sum_noAnnotations( 1,2,3 )) )
+
+''' With annotations '''
+def sum_Annotations( a:"arg" = 400, b:int, c:0.9, d:int=16 ) -> int:
+	return a + b + c + d
+
+print( "With annotations: %d" %(sum_Annotations( 1,2,3 )) )
+print( "func.__annotations__ in dict form: %s " %( sum_Annotations.__annotations__ ) )
+
+
