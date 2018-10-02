@@ -92,7 +92,8 @@ def sum_noAnnotations( a, b, c ):
 print( "No annotations: %d" %(sum_noAnnotations( 1,2,3 )) )
 
 ''' With annotations '''
-def sum_Annotations( a:"arg" = 301, b:int, c:0.9, d:int=16 ) -> int:
+''' non-default arguments need to be placed before the default arguments. i.e. arguments b and c are placed before others. '''
+def sum_Annotations( b:int, c:0.9,  a:"arg" = 301, d:int=16 ) -> int:
 	return a + b + c + d
 
 print( "With annotations: %d" %(sum_Annotations( 1,2,3 )) )
@@ -136,7 +137,7 @@ print( Name_( "John" ) )
 ''' Map iterable to functions respectively. '''
 
 # filter( functions objects, iterable )
-''' Select iterable by the rule of function. '''
+''' Select iterable by the rule of function when the value is true. '''
 
 # reduce( function object, iterable )
 ''' Combine iterable by the rule of function respectively. '''
