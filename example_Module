@@ -1,0 +1,33 @@
+#!/usr/bin/python3.5
+
+# Modules
+'''
+	The highest-level program unit, which packages program code and data for reuse, and provide self-contained namespace that avoids variable names clashes across programs.
+
+	The names of modules become attributes of imported module objects.
+
+'''
+
+
+# Import
+'''
+	Imports are not just textual insertion of ine file into another. They are runtime operations that perform three steps the first time a program imports a given file.
+	
+	1. Find modules file
+		import module statement without file extension and path of file.
+	2. Compile it to byte code (if needed).
+		*Compile:
+			If the byte code file is older than the source file or was created by a different Python version, Python automatically regenerate the byte code when the program is run.	
+		*Don't compile:
+
+	3. Run the module's code:
+		All statements in the file are run in turn, from top to buttom, and any assignments made to names during this step generate attributes of the resulting module object.
+	
+	Because of these steps, any given module is imported only once by default. Future imports skip all three steps and reuse the already loaded module in memory.
+
+'''
+
+
+
+
+
