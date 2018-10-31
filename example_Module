@@ -4,7 +4,7 @@
 '''
 	The highest-level program unit, which packages program code and data for reuse, and provide self-contained namespace that avoids variable names clashes across programs.
 
-	The names of modules become attributes of imported module objects.
+	A module's source code file automatically become a module object when that module is imported. The names of modules become attributes of imported module objects.
 
 '''
 
@@ -27,7 +27,9 @@
 
 '''
 
-
-
-
+# Filenames of modules
+'''
+	Module filenames should end in a .py extension with any name you want ( but not to break the rules for variable names)  and import module without extension. Because module names become variables inside Python program.
+	
+'''
 
