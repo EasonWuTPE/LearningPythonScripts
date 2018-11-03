@@ -9,10 +9,28 @@
 '''
 
 
-# Import
+# import module
 '''
 	Imports are not just textual insertion of ine file into another. They are runtime operations that perform three steps the first time a program imports a given file.
 	
+
+'''
+
+# from module import X, Y, Z
+'''
+	"from" copies specific name X from one file over to another sxope, it allows us to use the copied names or attributes directly in the script without going through the module.
+'''
+
+# from module import *
+'''
+	"from *", instead of specific names, we gets copies of all names or attributes assigned at the top level of the referenced module. It would pollute the namespace and give unpredictable results.
+'''
+
+# import modules v.s. from module import * vs from module import X
+'''
+	"from" copies a module's specific attributes, such that they become simple variables in the recipient. Thus, you can use the all attributes as name directly instead of attributes reference.
+
+# Three steps of import module and from module import X
 	1. Find modules file
 		import module statement without file extension and path of file.
 	2. Compile it to byte code (if needed).
@@ -24,6 +42,8 @@
 		All statements in the file are run in turn, from top to buttom, and any assignments made to names during this step generate attributes of the resulting module object.
 	
 	Because of these steps, any given module is imported only once by default. Future imports skip all three steps and reuse the already loaded module in memory.
+
+# Besides three steps, "from module import *" would import all names and attributes in the module into the importing scope.
 
 '''
 
