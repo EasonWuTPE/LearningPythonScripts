@@ -53,3 +53,38 @@
 	
 '''
 
+# imports happen only once.
+'''
+	First import loads and runs module's code. 
+	Second and later import don't rerun module's code, they just fetch the already created module's objects from Python's internal modules table.
+	Use reload to reload and rerun the module's code.
+'''
+
+# import and from are assignment
+'''
+	Like def, import and from are executable assigments. They can be nested in if statements. When program reaches, execute the import modules. import also can be nested in def statements.
+'''
+
+# reload modules
+'''
+	The reload function allows parts of program to be changed without stopping the whole program.
+
+	1. reload is a function in Python not a statement.
+	2. reload is passed an existing module objects not a new name
+	3. reload must be imported from imp
+	4. reload runs a module file's new code in the module's current namespace rather than deleting and recreating it.
+	5. People who use from to import modules to fetch attributes in the pass won't be affected by reload. They still have the same attribute objects that fetched before reload.
+
+	>> import moduleA  # Module must be imported before reload
+	>> ....
+	>> from imp import reload # import reload
+	>> reload( moduleA )
+	>> ....
+
+
+
+'''
+
+
+
+
