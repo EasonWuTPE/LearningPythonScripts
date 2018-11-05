@@ -1,6 +1,6 @@
 #!/usr/bin/python3.5
 
-# Modules
+# ---------------------------------------Modules-------------------------------------------------#
 '''
 	The highest-level program unit, which packages program code and data for reuse, and provide self-contained namespace that avoids variable names clashes across programs.
 
@@ -83,7 +83,7 @@
 
 '''
 
-# Package
+# ---------------------------------------Packages-------------------------------------------------#
 '''
 	Packages are container for modules and other subpackages. Namely, a package is a directory of Python modules.
 		
