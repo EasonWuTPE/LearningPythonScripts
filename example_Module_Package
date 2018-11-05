@@ -118,6 +118,7 @@
 '''
 
 # package relative import v.s. package absolute import
+# >>  HAVING SOME PROBLEM !!!!!!!!!!!!!!
 '''
 	|-------------------------------------------------------------------------------------------|
 	|	dir0\																					|
@@ -139,8 +140,18 @@
 
 
 # package absolute import
-	Normal package import is absolute import. Namely, relative import without dot is refered as absolute import.
+	Normal package import is absolute import. Namely, relative import without dot is refered as absolute import, which import checks onloy paths on the sys.path search path.
 	>>
 
 '''
 
+# Some Note of import statement
+'''
+	If modules,
+		the imported module must listed in the module seach path (sys.path), or it would run into error by import statement. -> abolutely import.
+		Use from statement could avoid this error.
+
+	If it wasn't a package which is declared and initailized by __init__.py ,
+		absolute import statements must list all the directories in the sys.path
+		 
+'''
