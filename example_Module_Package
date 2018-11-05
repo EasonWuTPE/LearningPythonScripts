@@ -91,11 +91,14 @@
 
 	After Python3.3, except dir0, the container, each directory must contained the file name __init__.py, or it will fail.
 
-	>> import dir1.dir2.mod 	# In this way, you have to add the module search path
-	>> from dir1.dir2 import mode   # In this way, you don't have to add the module search path
+	>> import dir1.dir2.mod 	
+	>> from dir1.dir2 import mode   
+	# Both way of import modules from packages needn't to be added to module search path.
+
 	like the figure below:
 	|-------------------------------------------------------------------------------------------|
-	|	dir0\																					|
+	|	dir0\ (home directory)																	|
+	|		main.py( the top-level module )															|	
 	|		dir1\																				|
 	|			__init__.py																		|
 	|			dir2\																			|
@@ -105,7 +108,7 @@
 	
 	__init__.py declare the directory as a Python package,generate a module namespace for a directory, and implements the behavior of "from ... import * " statements when used with directory import.
 
-	The _init__.py plays some role of below:
+	The __init__.py plays some role of below:
 		1. Package initialization
 		2. Module usability declarations
 		3. Module namespace initialization 
@@ -114,5 +117,30 @@
 
 '''
 
+# package relative import v.s. package absolute import
+'''
+	|-------------------------------------------------------------------------------------------|
+	|	dir0\																					|
+	|		dir1\																				|
+	|			__init__.py																		|
+	|			mod_1.py																		|
+	|		dir2\																				|
+	|			__init__.py																		|
+	|			mod_2.py																		|
+	|			mod_3.py																		|
+	|-------------------------------------------------------------------------------------------|
 
+# package relative import
+	Modlues required in the same package is so-called "package relative import", with the leading to specify in from statement, instead of modules located elsewhere on module import search path. -> relative explicit import
+	>>
+
+	Python3 doesn't support the relative implicit import.
+	>>
+
+
+# package absolute import
+	Normal package import is absolute import. Namely, relative import without dot is refered as absolute import.
+	>>
+
+'''
 
