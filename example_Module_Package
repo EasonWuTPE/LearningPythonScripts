@@ -81,10 +81,38 @@
 	>> reload( moduleA )
 	>> ....
 
-
-
 '''
 
+# Package
+'''
+	Packages are container for modules and other subpackages. Namely, a package is a directory of Python modules.
+		
+	The dotted path in statement is assumed to correspond to a path through thr directory hierarchy on your computer, leading to file mod.py, like ".dir0/dir1/dir2/mod.py", where dir0 is added to module search path.
+
+	After Python3.3, except dir0, the container, each directory must contained the file name __init__.py, or it will fail.
+
+	>> import dir1.dir2.mod 	# In this way, you have to add the module search path
+	>> from dir1.dir2 import mode   # In this way, you don't have to add the module search path
+	like the figure below:
+	|-------------------------------------------------------------------------------------------|
+	|	dir0\																					|
+	|		dir1\																				|
+	|			__init__.py																		|
+	|			dir2\																			|
+	|				__init__.py																	|
+	|				mod.py																		|
+	|-------------------------------------------------------------------------------------------|
+	
+	__init__.py declare the directory as a Python package,generate a module namespace for a directory, and implements the behavior of "from ... import * " statements when used with directory import.
+
+	The _init__.py plays some role of below:
+		1. Package initialization
+		2. Module usability declarations
+		3. Module namespace initialization 
+		4. from * statement behavior
+	The __init__.py can be empty and it is quite different with the __init__ in class, even they are initializztion.
+
+'''
 
 
 
