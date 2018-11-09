@@ -1,0 +1,4 @@
+#!/usr/bin/python3.5
+
+
+print( "This is a place to learn data analysis with packages in Python. " )
