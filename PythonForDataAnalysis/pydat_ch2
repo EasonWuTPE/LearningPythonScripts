@@ -1,0 +1,99 @@
+#!/usr/bin/python3.5
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# The original data type is JSON
+re = open( r"pydata-book/datasets/bitly_usagov/example.txt" )
+#print( re.readline() )
+#print( re.readline() )
+
+
+# Convert JSON to Python Documents
+import json
+
+path = r"pydata-book/datasets/bitly_usagov/example.txt" 
+records = [ json.loads( line ) for line in open( path ) ]
+#print( records[0] )
+#print( records[0]["tz"] )
+
+# Read specific data in dataset
+'''
+time_zone = [ rec['tz'] for rec in records ]
+print( time_zone[:5] )
+>> It ran into errors, because there's not every data in records has the key "tz".
+'''
+time_zone = [ rec['tz'] for rec in records if "tz" in rec.keys() ]
+#print( time_zone[:10] ) # There is empty data.
+#print( len( [ x for x in time_zone if x =="" ] ) ) # There is 521 empty datas in time_zone.
+
+# Counts how many categories in each time_zone
+def get_counts( data ):
+	counts = {}
+	for view in data:
+		if view in counts.keys():
+			counts[view] += 1
+		else:
+			counts[view] = 1
+	return counts
+
+#print( get_counts( time_zone ) )
+#print( get_counts( time_zone )["America/New_York"] )
+
+# Rearrange the time zone descently.
+def order_top10( data, n = 10 ):
+	val = [ ( count, index ) for (index, count) in data.items() ]
+	val.sort(reverse=True)
+	return val[:10] 
+
+#print( order_top10( get_counts(time_zone) ) )
+
+#Using Pandas
+import pandas as pd
+
+frame = pd.DataFrame( records ) # cread a dataframe with pandas.
+
+
+#print( frame.head(5) )
+
+#print( frame["tz"].head(10) ) # frame["tz"] returns a Series data type.
+# pd.Series has a attribute value_counts() can count the amounts of each data and sort it, like the user-defined function "get_counts() above.
+time_zone_pandas = frame["tz"].value_counts() # This returns Series data type. 
+#print( time_zone_pandas[:10] )
+
+
+# pd.DataFrame or Series.fillna( vals ) :
+#	 Replacing the NA value and unknown string with string fillna(" ")
+clean_tz = frame["tz"].fillna( "Missing Value" ) # This returns a Series
+
+# pd.Series[]:
+#	You can use slice or index in [] to call values.
+#	Other way, put "if statement" in [] to do something with loop.
+#		e.g. if the values of Series is empty, the refer to a int object 123
+#		i.e. Series[ Series == "" ] = 123
+clean_tz[ clean_tz == "" ] = "Unknown"
+
+tz_counts = clean_tz.value_counts()
+#print( tz_counts[:10] )
+
+
+# Plot the graph with the attribute of Series and DataFrame.
+tz_counts[:10].plot( kind = "bar" ) # The arg "rot" ran weird??
+# tz_counts[:10].plot.bar( rot = 1 ) #the same as above.
+#plt.show() # Call plt.show() to show the plot in pandas.
+
+
+res = pd.Series( [ x.split(" ")[0] for x in frame['a'].dropna() ] )
+#print( res.head(5) )
+#print( res.value_counts() )
+
+cframe = frame[ frame['a'].notnull() ] # A DataFrame
+os_name = pd.Series( np.where( cframe['a'].str.contains("Windows"), "Windows", "Not Windows" ) ) # np.where returns a np.array such that needs to be convert back to pandas.
+#print( os_name[:10] )
+
+# pd.DataFrame.groupby( ) 
+by_tz_os = cframe.groupby( ["tz", os_name] )
+aggregate_counts = by_tz_os.size().unstack().fillna('.')
+print( aggregate_counts[:10] )
+
+
