@@ -36,7 +36,7 @@ print( "\n***** Movies data. *****" )
 print( movies[:5] )
 
 
-# Merge threee table into one.
+# Merge three table into one.
 print( "\n***** Merge three data into one table. *****" )
 data = pd.merge( pd.merge( ratings, usr ), movies ) 
 print( data[:5] ) # A DataFrame.
@@ -57,3 +57,54 @@ print( statis_ratings[:5] )
 
 
 
+# Filter the movies that are rated at least 250 ratings.
+ratings_by_title = data.groupby( "title" ).size()
+print( "\n*****Grouped by title and use .size() to get a Series of group size for each title.*****" )
+print( ratings_by_title[:10] )
+print( "*****Then, print the ratings up to 250*****" )
+print( ratings_by_title.index[ratings_by_title >= 250][:10] )
+active_titles = ratings_by_title.index[ratings_by_title >= 250] 
+mean_ratings = mean_ratings.ix[active_titles]
+print( "*****Print the ratings above 250 by Female descending.*****" )
+print( mean_ratings.sort_index( by = 'F', ascending = False )[:10] )
+
+# Another method same as above.
+ratings_by_title_value_counts = data["title"].value_counts()
+print( "\n### Another method same as above.###" )
+print( "*****Use value_counts(), as same as above without sorting..*****" )
+print( ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250][:10] )
+active_titles_value_counts = ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250]
+mean_ratings_value_counts = mean_ratings.ix[active_titles_value_counts]
+print( "*****Print the ratings above 250 by Female descending.*****" )
+print( mean_ratings_value_counts.sort_index( by = 'F', ascending = False )[:10] )
+print( "######################################" )
+
+print("\n\n\n")
+'''
+ratings_by_title_value_counts[ratings_by_title_value_counts>=250]
+	means that an "Series" that same movie title has be counted over 250 times.
+ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250]
+	means that it returns an "index" which the same movie title has be counted over 250 times.
+'''
+print( "The difference bwteen ratings_by_title_value_counts[ratings_by_title_value_counts>=250] and ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250] " )	
+print( ratings_by_title_value_counts[ratings_by_title_value_counts>=250][:10] )
+print( ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250][:10] )
+
+'''
+counts = 0
+if len(ratings_by_title.index[ratings_by_title>=250]) == len(ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250]):
+		print( "Same length" )
+for i in ratings_by_title.index[ratings_by_title>=250]:
+	if i not in ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250]:
+		print( "There is %s not in it." %i ) 
+		break
+	else:
+		counts += 1
+		pass 
+	if counts == len( ratings_by_title.index[ ratings_by_title>=250] ):
+		print( "All GOOD" )
+'''
+
+
+
+	

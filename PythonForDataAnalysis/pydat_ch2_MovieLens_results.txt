@@ -69,3 +69,83 @@ $1,000,000 Duck (1971)         3.375000  2.761905    ...     0.916667  1.290476
 ...And Justice for All (1979)  3.828571  3.689024    ...     0.910924  0.743192
 
 [5 rows x 8 columns]
+
+*****Grouped by title and use .size() to get a Series of group size for each title.*****
+title
+$1,000,000 Duck (1971)                37
+'Night Mother (1986)                  70
+'Til There Was You (1997)             52
+'burbs, The (1989)                   303
+...And Justice for All (1979)        199
+1-900 (1994)                           2
+10 Things I Hate About You (1999)    700
+101 Dalmatians (1961)                565
+101 Dalmatians (1996)                364
+12 Angry Men (1957)                  616
+dtype: int64
+*****Then, print the ratings up to 250*****
+Index([''burbs, The (1989)', '10 Things I Hate About You (1999)',
+       '101 Dalmatians (1961)', '101 Dalmatians (1996)', '12 Angry Men (1957)',
+       '13th Warrior, The (1999)', '2 Days in the Valley (1996)',
+       '20,000 Leagues Under the Sea (1954)', '2001: A Space Odyssey (1968)',
+       '2010 (1984)'],
+      dtype='object', name='title')
+*****Print the ratings above 250 by Female descending.*****
+gender                                                     F         M
+title                                                                 
+Close Shave, A (1995)                               4.644444  4.473795
+Wrong Trousers, The (1993)                          4.588235  4.478261
+Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)       4.572650  4.464589
+Wallace & Gromit: The Best of Aardman Animation...  4.563107  4.385075
+Schindler's List (1993)                             4.562602  4.491415
+Shawshank Redemption, The (1994)                    4.539075  4.560625
+Grand Day Out, A (1992)                             4.537879  4.293255
+To Kill a Mockingbird (1962)                        4.536667  4.372611
+Creature Comforts (1990)                            4.513889  4.272277
+Usual Suspects, The (1995)                          4.513317  4.518248
+
+### Another method same as above.###
+*****Use value_counts(), as same as above without sorting..*****
+Index(['American Beauty (1999)', 'Star Wars: Episode IV - A New Hope (1977)',
+       'Star Wars: Episode V - The Empire Strikes Back (1980)',
+       'Star Wars: Episode VI - Return of the Jedi (1983)',
+       'Jurassic Park (1993)', 'Saving Private Ryan (1998)',
+       'Terminator 2: Judgment Day (1991)', 'Matrix, The (1999)',
+       'Back to the Future (1985)', 'Silence of the Lambs, The (1991)'],
+      dtype='object')
+*****Print the ratings above 250 by Female descending.*****
+gender                                                     F         M
+Close Shave, A (1995)                               4.644444  4.473795
+Wrong Trousers, The (1993)                          4.588235  4.478261
+Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)       4.572650  4.464589
+Wallace & Gromit: The Best of Aardman Animation...  4.563107  4.385075
+Schindler's List (1993)                             4.562602  4.491415
+Shawshank Redemption, The (1994)                    4.539075  4.560625
+Grand Day Out, A (1992)                             4.537879  4.293255
+To Kill a Mockingbird (1962)                        4.536667  4.372611
+Creature Comforts (1990)                            4.513889  4.272277
+Usual Suspects, The (1995)                          4.513317  4.518248
+######################################
+
+
+
+
+The difference bwteen ratings_by_title_value_counts[ratings_by_title_value_counts>=250] and ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250] 
+American Beauty (1999)                                   3428
+Star Wars: Episode IV - A New Hope (1977)                2991
+Star Wars: Episode V - The Empire Strikes Back (1980)    2990
+Star Wars: Episode VI - Return of the Jedi (1983)        2883
+Jurassic Park (1993)                                     2672
+Saving Private Ryan (1998)                               2653
+Terminator 2: Judgment Day (1991)                        2649
+Matrix, The (1999)                                       2590
+Back to the Future (1985)                                2583
+Silence of the Lambs, The (1991)                         2578
+Name: title, dtype: int64
+Index(['American Beauty (1999)', 'Star Wars: Episode IV - A New Hope (1977)',
+       'Star Wars: Episode V - The Empire Strikes Back (1980)',
+       'Star Wars: Episode VI - Return of the Jedi (1983)',
+       'Jurassic Park (1993)', 'Saving Private Ryan (1998)',
+       'Terminator 2: Judgment Day (1991)', 'Matrix, The (1999)',
+       'Back to the Future (1985)', 'Silence of the Lambs, The (1991)'],
+      dtype='object')
