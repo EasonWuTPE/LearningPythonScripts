@@ -1,0 +1,71 @@
+
+***** Take a look for usr, rating and movie data. *****
+
+*****User data. *****
+   usr_id gender  age  occupation    zip
+0       1      F    1          10  48067
+1       2      M   56          16  70072
+2       3      M   25          15  55117
+3       4      M   45           7  02460
+4       5      M   25          20  55455
+
+*****Rating data. *****
+   usr_id  movie_id  rating  timestamp
+0       1      1193       5  978300760
+1       1       661       3  978302109
+2       1       914       3  978301968
+3       1      3408       4  978300275
+4       1      2355       5  978824291
+
+***** Movies data. *****
+   movie_id              ...                                     genres
+0         1              ...                Animation|Children's|Comedy
+1         2              ...               Adventure|Children's|Fantasy
+2         3              ...                             Comedy|Romance
+3         4              ...                               Comedy|Drama
+4         5              ...                                     Comedy
+
+[5 rows x 3 columns]
+
+***** Merge three data into one table. *****
+   usr_id  movie_id   ...                                     title  genres
+0       1      1193   ...    One Flew Over the Cuckoo's Nest (1975)   Drama
+1       2      1193   ...    One Flew Over the Cuckoo's Nest (1975)   Drama
+2      12      1193   ...    One Flew Over the Cuckoo's Nest (1975)   Drama
+3      15      1193   ...    One Flew Over the Cuckoo's Nest (1975)   Drama
+4      17      1193   ...    One Flew Over the Cuckoo's Nest (1975)   Drama
+
+[5 rows x 10 columns]
+
+***** data.ix[0]*****
+usr_id                                             1
+movie_id                                        1193
+rating                                             5
+timestamp                                  978300760
+gender                                             F
+age                                                1
+occupation                                        10
+zip                                            48067
+title         One Flew Over the Cuckoo's Nest (1975)
+genres                                         Drama
+Name: 0, dtype: object
+
+***** Aggregate the ratings grouped by gender to calculate the mean of rating for each movie. *****
+gender                                F         M
+title                                            
+$1,000,000 Duck (1971)         3.375000  2.761905
+'Night Mother (1986)           3.388889  3.352941
+'Til There Was You (1997)      2.675676  2.733333
+'burbs, The (1989)             2.793478  2.962085
+...And Justice for All (1979)  3.828571  3.689024
+
+***** Aggregate the ratings grouped by gender to calculate the statistic of rating for each movie. *****
+                                   mean              ...          var          
+gender                                F         M    ...            F         M
+$1,000,000 Duck (1971)         3.375000  2.761905    ...     0.916667  1.290476
+'Night Mother (1986)           3.388889  3.352941    ...     1.044444  1.508021
+'Til There Was You (1997)      2.675676  2.733333    ...     0.947447  1.352381
+'burbs, The (1989)             2.793478  2.962085    ...     1.264572  1.208079
+...And Justice for All (1979)  3.828571  3.689024    ...     0.910924  0.743192
+
+[5 rows x 8 columns]

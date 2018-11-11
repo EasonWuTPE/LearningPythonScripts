@@ -1,0 +1,59 @@
+#!/usr/bin/python3.5 
+
+# MovieLens Data Sets
+
+# Import packages
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Import and view data 
+'''
+	The main difference in .read_csv and .read_table is the parameter "sep".
+	By default, sep=',' in read_csv and sep='\t' in read_table. 
+	However, it can be changed by hand to read different files.
+'''
+print( "\n***** Take a look for usr, rating and movie data. *****" )
+
+usr_name = [ "usr_id", "gender", "age", "occupation", "zip" ]
+usr = pd.read_table( r"./pydata-book/datasets/movielens/users.dat",
+						sep = "::", header = None, names = usr_name )
+print( "\n*****User data. *****" )
+print( usr[:5] )
+#usr_sex = usr["gender"].value_counts()
+#print( usr_sex )
+
+rnames = [ "usr_id", "movie_id", "rating", "timestamp" ]
+ratings = pd.read_table( r"./pydata-book/datasets/movielens/ratings.dat",
+						sep = "::", header = None, names = rnames )
+print( "\n*****Rating data. *****" )
+print( ratings[:5] )
+
+mnames = [ "movie_id", "title", "genres" ]
+movies = pd.read_table( r"./pydata-book/datasets/movielens/movies.dat",
+						sep = "::", header = None, names = mnames )
+print( "\n***** Movies data. *****" )
+print( movies[:5] )
+
+
+# Merge threee table into one.
+print( "\n***** Merge three data into one table. *****" )
+data = pd.merge( pd.merge( ratings, usr ), movies ) 
+print( data[:5] ) # A DataFrame.
+
+print( "\n***** data.ix[0]*****" )
+# The same as data.iloc[0] to show the first row of data in column direction. 
+print( data.ix[0] ) 
+
+print( "\n***** Aggregate the ratings grouped by gender to calculate the mean of rating for each movie. *****" )
+mean_ratings = data.pivot_table( "rating", index = "title",
+									columns = "gender", aggfunc = "mean" ) 
+print( mean_ratings[:5] )
+
+print( "\n***** Aggregate the ratings grouped by gender to calculate the statistic of rating for each movie. *****" )
+statis_ratings = data.pivot_table( "rating", index = "title",
+									columns = "gender", aggfunc = ["mean","max","min", "var"] ) 
+print( statis_ratings[:5] )
+
+
+
