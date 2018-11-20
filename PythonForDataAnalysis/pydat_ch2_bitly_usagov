@@ -103,4 +103,3 @@ sub_aggregate_counts = aggregate_counts.take( indexer )[:10]
 print( sub_aggregate_counts )
 							
 
-

@@ -86,10 +86,13 @@ ratings_by_title_value_counts[ratings_by_title_value_counts>=250]
 ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250]
 	means that it returns an "index" which the same movie title has be counted over 250 times.
 '''
-print( "The difference bwteen ratings_by_title_value_counts[ratings_by_title_value_counts>=250] and ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250] " )	
+
+
+print( "*" *60 )
+print( "Note:\nThe difference bwteen ratings_by_title_value_counts[ratings_by_title_value_counts>=250] and ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250] " )	
 print( ratings_by_title_value_counts[ratings_by_title_value_counts>=250][:10] )
 print( ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250][:10] )
-
+print( "*" *60, "\n\n\n" )
 '''
 counts = 0
 if len(ratings_by_title.index[ratings_by_title>=250]) == len(ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250]):
@@ -108,3 +111,22 @@ for i in ratings_by_title.index[ratings_by_title>=250]:
 
 
 	
+# Measuring rating divisive
+mean_ratings["diff"] = mean_ratings['M'] - mean_ratings['F'] # Add a column "diff" 
+sorted_by_diff = mean_ratings.sort_index(by="diff")
+print( "****** Measuring the difference of rating between F and M. ******\n ", 
+				sorted_by_diff[:5] ) 
+print( "****** Measuring the difference of rating between F and M reversely. ******\n ", 
+				sorted_by_diff[::-1][:5] ) 
+
+# Standard deviation of rating grouped by title 
+rating_std_by_title = data.groupby("title")["rating"].std() 
+#print( "** ",rating_std_by_title[:5] )
+# Filter down to active_titles, where active_title is the rating >= 250 
+rating_std_by_title = rating_std_by_title.ix[active_titles] 
+print( "\n***** std of rating >= 250 grouped by title. *****" )
+print( rating_std_by_title.sort_values(ascending=False)[:10] ) 
+
+
+
+

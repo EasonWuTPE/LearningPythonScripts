@@ -130,6 +130,8 @@ Usual Suspects, The (1995)                          4.513317  4.518248
 
 
 
+************************************************************
+Note:
 The difference bwteen ratings_by_title_value_counts[ratings_by_title_value_counts>=250] and ratings_by_title_value_counts.index[ratings_by_title_value_counts>=250] 
 American Beauty (1999)                                   3428
 Star Wars: Episode IV - A New Hope (1977)                2991
@@ -149,3 +151,37 @@ Index(['American Beauty (1999)', 'Star Wars: Episode IV - A New Hope (1977)',
        'Terminator 2: Judgment Day (1991)', 'Matrix, The (1999)',
        'Back to the Future (1985)', 'Silence of the Lambs, The (1991)'],
       dtype='object')
+************************************************************ 
+
+
+
+****** Measuring the difference of rating between F and M. ******
+  gender                            F         M      diff
+title                                                  
+Dirty Dancing (1987)       3.790378  2.959596 -0.830782
+Jumpin' Jack Flash (1986)  3.254717  2.578358 -0.676359
+Grease (1978)              3.975265  3.367041 -0.608224
+Little Women (1994)        3.870588  3.321739 -0.548849
+Steel Magnolias (1989)     3.901734  3.365957 -0.535777
+****** Measuring the difference of rating between F and M reversely. ******
+  gender                                         F         M      diff
+title                                                               
+Good, The Bad and The Ugly, The (1966)  3.494949  4.221300  0.726351
+Kentucky Fried Movie, The (1977)        2.878788  3.555147  0.676359
+Dumb & Dumber (1994)                    2.697987  3.336595  0.638608
+Longest Day, The (1962)                 3.411765  4.031447  0.619682
+Cable Guy, The (1996)                   2.250000  2.863787  0.613787
+
+***** std of rating >= 250 grouped by title. *****
+title
+Dumb & Dumber (1994)                     1.321333
+Blair Witch Project, The (1999)          1.316368
+Natural Born Killers (1994)              1.307198
+Tank Girl (1995)                         1.277695
+Rocky Horror Picture Show, The (1975)    1.260177
+Eyes Wide Shut (1999)                    1.259624
+Evita (1996)                             1.253631
+Billy Madison (1995)                     1.249970
+Fear and Loathing in Las Vegas (1998)    1.246408
+Bicentennial Man (1999)                  1.245533
+Name: rating, dtype: float64
