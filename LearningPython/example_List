@@ -21,6 +21,8 @@ list1[2:6] = [ y for y in range(100,104) ]
 print(list1)
 
 L = [ 100, 200, 300, 400]
+L[0] = 1 # Replace the element of index 0 from 100 to 1 
+print(L) 
 L[:0] = [1,2,3] # Insert [1,2,3] in front of index 0
 print(L) 
 L[:2] = [10,20] # Insert [1,2,3] in front of index 2
