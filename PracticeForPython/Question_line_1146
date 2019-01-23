@@ -1,0 +1,9 @@
+#!/usr/bin/python3.5
+
+# Question_line_1146
+
+L = range(1,11)
+sqrNums = map( lambda x: x**2, L )
+print(sqrNums)
+
+

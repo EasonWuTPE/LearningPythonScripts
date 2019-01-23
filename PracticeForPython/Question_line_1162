@@ -1,0 +1,8 @@
+#!/usr/bin/python3.5
+
+# Question_line_1162
+
+L = list( range(1,11) )
+evenNum = list(map( lambda x: x**2, filter( lambda x: x%2==0, L ) ))
+# map() zip() filter() in Python3.X is a iterable objects, to print it out by change the data type.
+print( evenNum )

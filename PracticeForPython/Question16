@@ -1,0 +1,14 @@
+#!/usr/bin/python3.5
+
+# Question 16
+
+string = [ x for x in range(1,10) ]
+
+val = []
+
+for num in string:
+	if num%2!=0:
+		val.append(str(num))
+
+print( ','.join(val) ) 
+

@@ -1,0 +1,18 @@
+#!/usr/bin/python3.5
+
+# Question 19
+from operator import itemgetter #itemgetter package
+name = []
+
+while True:
+	x = input()
+	if x:
+		name.append( tuple(x.split(',')) )
+	else:
+		break;
+
+print( sorted( name,key = itemgetter( 0, 1, 2) ) )
+
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/python3.5
+
+# Question_line_1294 
+
+class Rectangle():
+	def __init__( self, L, W ):
+		self.L = L
+		self.W = W
+	
+	def area( self ):
+		return self.L*self.W
+
+aRec = Rectangle( 100, 200 )
+print( aRec.area() )
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/python3.5
+
+# Question 13
+
+string = list(input( ">> " ))
+
+count = { "digit":0, "letter":0 } 
+
+for x in string:
+	if x.isdigit()== True:
+		count["digit"]+=1
+	if x.isalpha()== True:
+		count["letter"]+=1
+
+print( "LETTERS {}\nDIGITS {}".format( count["letter"], count["digit"]) )
+
+
+		

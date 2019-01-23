@@ -1,0 +1,9 @@
+#!/usr/bin/python3.5
+
+# Question_line_739
+
+def ConvertToInteger( string1 ):
+	return str(string1)
+
+print( "%s is %s." %( ConvertToInteger(1000), type(ConvertToInteger(1000))) )
+

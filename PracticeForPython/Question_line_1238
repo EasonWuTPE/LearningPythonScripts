@@ -1,0 +1,15 @@
+#!/usr/bin/python3.5
+
+# Question_line_1238 
+
+class American():
+	pass
+class NewYorker(American):
+	pass
+
+anAmerican = American()
+aNewYork = NewYorker()
+print( anAmerican )
+print( aNewYork )
+
+	

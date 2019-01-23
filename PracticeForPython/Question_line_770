@@ -1,0 +1,12 @@
+#!/usr/bin/python3.5
+
+#Question_line_770
+
+def Sum_and_convert( a, b ):
+	return int(a)+int(b)
+
+val = input( "Input two numbers with space>> " ).split()
+
+print( Sum_and_convert(val[0], val[1]) )
+
+

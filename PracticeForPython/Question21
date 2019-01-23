@@ -1,0 +1,28 @@
+#!/usr/bin/python3.5
+
+# Question 21
+
+import math 
+
+position = [0,0]
+while True:
+	x = input()
+	if x:
+		pos = x.split()
+		direction = pos[0]
+		step = int( pos[1] )
+		if direction == "UP":
+			position[1] += step	
+		if direction == "DOWN":
+			position[1] -= step
+		if direction == "RIGHT":
+			position[0] += step
+		if direction == "LEFT":
+			position[0] -= step
+	else:
+		break;
+	
+print( round( math.sqrt(position[0]**2+position[1]**2 ) ) )
+
+
+

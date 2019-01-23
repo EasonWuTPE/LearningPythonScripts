@@ -1,0 +1,16 @@
+#!/usr/bin/python3.5
+
+# Q = Square root of ( 2*C*D/H )
+
+import math
+
+C, H = 50, 30
+str1 = input( "Input data>> " )
+
+str2 = str1.split(",")
+print( str2 )
+val = []
+for D in str2:
+	val.append( str( int(math.sqrt(2*C*int(D)/H)) ) )
+
+print( ','.join(val) )

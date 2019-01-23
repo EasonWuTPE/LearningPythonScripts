@@ -1,0 +1,6 @@
+#!/usr/bin/python3.5
+
+# Question_line_1185 
+
+evenNums = list( filter( lambda x:x%2==0, list( range(1,21) ) ) )
+print( evenNums )

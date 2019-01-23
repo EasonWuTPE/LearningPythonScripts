@@ -1,0 +1,20 @@
+#!/usr/bin/python3.5
+
+# Question 7 
+import numpy as np
+
+num = input( "Input the numbers of row and col >> " )
+
+vec = [ int(x) for x in num.split(',') ]
+rowNum = vec[0]
+colNum = vec[1]
+
+matrix = [ [ x for x in range(colNum)] for  y in range( rowNum) ]
+
+#print( matrix )
+
+for row in range(rowNum):
+	for col in range( colNum ):
+		matrix[row][col] = row*col
+
+print( matrix )

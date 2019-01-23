@@ -1,0 +1,13 @@
+#!/usr/bin/python3.5
+
+# Question_line_949
+
+def Square( L1 ):
+	for i in range(len(L1)):
+		L1[i] = int(L1[i])**2
+	print( L1 )
+
+Input = input( ">> " )
+List = Input.split(',')
+
+Square(List)

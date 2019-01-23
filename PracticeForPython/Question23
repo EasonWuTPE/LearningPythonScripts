@@ -1,0 +1,7 @@
+#!/usr/bin/python3.5
+
+# Question 23
+
+def sqrtnum( x ):
+	return x**0.5
+

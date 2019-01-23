@@ -1,0 +1,18 @@
+#!/usr/bin/python3.5
+
+# Question 20
+
+def myrange(n):
+	x = 0
+	while x < n: 
+		if x%7==0:
+			yield x
+		x+=1
+n = int( input(">> " ) )
+
+for i in myrange(n):
+	print( i, end=" " )
+
+print("\n")
+
+

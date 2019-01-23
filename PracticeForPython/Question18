@@ -1,0 +1,30 @@
+#!/usr/bin/python3.5
+
+# Question 18
+
+import re # Import regular expression module
+
+val = input().split(',')
+
+password = []
+
+for ele in val:
+	if len(ele)<6 or len(ele)>12:
+		continue
+	if not re.search( "[a-z]", ele):
+		continue
+	elif not re.search( "[a-z]", ele):
+		continue
+	elif not re.search( "[A-Z]", ele):
+		continue
+	elif not re.search( "[0-9]", ele):
+		continue
+	elif not re.search( "[$#@]", ele):
+		continue
+	elif re.search( "\s", ele):
+		continue
+	password.append( ele )
+
+print(','.join(password) )
+
+	

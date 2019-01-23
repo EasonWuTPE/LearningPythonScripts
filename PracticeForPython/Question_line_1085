@@ -1,0 +1,16 @@
+#!/usr/bin/python3.5
+
+# Question_line_1085 
+
+import sys
+
+T = tuple(range(1,11))
+
+def EvenTuple(tpl):
+	L=[]
+	for t in tpl:
+		if t%2==0:
+			L.append(t)
+	print(tuple(L),file=sys.stdout, sep=',')
+
+EvenTuple(T)

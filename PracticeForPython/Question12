@@ -1,0 +1,10 @@
+#!/usr/bin/python3.5
+# Question 12
+
+val = []
+for x in range(2000,3001):
+	if x%2 == 0:
+		val.append( str(x) )
+
+print( ','.join(val) )
+	

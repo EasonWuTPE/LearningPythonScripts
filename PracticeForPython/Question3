@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+'''
+Make a dict of X : X^2
+'''
+X = int( input("Input an integer >> ") )
+
+
+d = { x:x**2 for x in range( 1, X+1 ) } 
+print( d )
+
+

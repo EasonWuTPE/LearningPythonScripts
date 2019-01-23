@@ -1,0 +1,6 @@
+#!/usr/bin/python3.5
+
+x = input( "Input a array of numbers separated by ',' >> " ) 
+
+print( x.split(',') )
+print( tuple( x.split(',') ) )

@@ -1,0 +1,36 @@
+#!/usr/bin/python3.5
+
+# Question 22
+'''
+string = input( )
+times = string.split()
+times.sort() #sort the list
+collect = [] # a list to collect 
+
+for val1 in times:
+	collect.append( "{}:{}".format( val1, string.count(val1) ) )
+
+ans =  list(set(collect))
+ans.sort()
+
+for val in ans:
+	print( val )
+	
+'''
+
+# Another GOOD Solution
+
+lines = input()
+freq = {}
+
+for word in lines.split():
+	# dict.get( key, 0 ) to search key of dict and return its value, or 0.
+	freq[word] = freq.get( word, 0 )+1
+
+words = freq.keys()
+
+for i in words:
+	print( " %s:%d" %( i, freq[i] ) )
+
+
+

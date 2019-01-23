@@ -1,0 +1,19 @@
+#!/usr/bin/python3.5
+
+
+INPUT = input( ).split(",")
+
+num = [ x for x in INPUT ]
+ 
+num1=[]
+
+for i in num:
+
+	intd = int( i, 2)
+	
+	'''if not intd%5==nothing==0, then next step'''
+	if not intd%5:
+		num1.append(str(i))
+
+print(','.join(num1) )
+

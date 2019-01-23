@@ -1,0 +1,17 @@
+#!/usr/bin/python3.5
+# Question 14
+
+string = input( ">> " )
+
+val = { "Upper": 0, "Lower": 0 }
+
+for i in string:
+	if i.isupper():
+		val["Upper"]+=1
+	if i.islower():
+		val["Lower"]+=1
+
+print("UPPER CASE: {}\nLOWER CASE: {}".format( val["Upper"], val["Lower"]))
+
+
+

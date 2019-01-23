@@ -1,0 +1,22 @@
+#!/usr/bin/python3.5
+#Question 17
+
+val = []
+bal = 0
+
+while True:
+	x = input( )
+	if x:
+		val.append( x )
+	else:
+		break;
+
+for i in range( len(val) ):
+	cal = val[i].split()
+	if cal[0] == 'D':
+		bal = bal + int( cal[1] )
+	else:
+		bal = bal - int( cal[1] )
+print( bal )
+
+

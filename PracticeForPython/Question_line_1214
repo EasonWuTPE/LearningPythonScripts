@@ -1,0 +1,11 @@
+#!/usr/bin/python3.5
+
+# Question_line_1214 
+
+class American():
+	
+	def printNationality(self):
+		print( "America" )
+
+anAmerican = American()
+anAmerican.printNationality()

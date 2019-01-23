@@ -1,0 +1,18 @@
+#!/usr/bin/python3.5
+
+# Question_line 726
+
+
+def sum(num1,num2):
+	return num1+num2
+
+num = input("Input two numbers with space>> " ).split()
+
+for n in range(len(num)):
+	num[n] = int(num[n])
+
+print( sum( num[0], num[1] ) )
+
+
+
+

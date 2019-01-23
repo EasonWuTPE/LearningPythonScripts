@@ -1,0 +1,8 @@
+#!/usr/bin/python3.5
+
+# Question 8
+
+string = input( "Words >> " )
+stringSort = string.split(',')
+stringSort.sort()
+print( ','.join(stringSort) )

@@ -1,0 +1,19 @@
+#!/usr/bin/python3.5
+
+# Question_line_1320 
+
+class Shape():
+	def __init__( self ):
+		pass
+	def area( self ):
+		return 0
+
+class Square():
+	def __init__( self, L = 0 ):
+		Shape.__init__( self )
+		self.L = L
+	def area( self ):
+		return self.L**2
+
+aSquare = Square( 12 )
+print( aSquare.area() )

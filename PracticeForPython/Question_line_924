@@ -1,0 +1,12 @@
+#!/usr/bin/python3.5
+
+# Question_line_924
+
+def printDict():
+	dict1 = dict()
+	for i in range(1,21):
+		dict1[i] = i**2
+	for k in dict1.keys():
+		print( k )
+
+printDict()

@@ -1,0 +1,17 @@
+#!/usr/bin/python3.5
+
+# Question_line_1127 
+
+
+def filter( l ):
+	List = []
+	for val in l:
+		if val%2==0:
+			List.append(val)
+	print(List)
+		
+
+L = list(range(1,11))
+filter(L)
+
+

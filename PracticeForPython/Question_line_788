@@ -1,0 +1,8 @@
+#!/usr/bin/python3.5
+
+# Question_line_788
+
+def cat( str1, str2 ):
+	return str1+str2
+
+print( cat("ADC","DEF") )
