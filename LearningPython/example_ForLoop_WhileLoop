@@ -7,7 +7,7 @@ T = ( ('a',100), ('b',200), ('c',300) )
 
 # Method I
 for (key,val) in T:
-	print( key, val )
+    print( key, val )
 
 # Method II
 for TwoVars in T:
