@@ -16,7 +16,7 @@ import MySQLdb as mysql
                               passwd="[password]", db="[database name]" ) 
 '''
 mydb = mysql.connect( host="localhost", user="root", 
-                      passwd="Tv0912548857", db="mydb" ) 
+                      passwd="***", db="mydb" ) 
 
 '''    2. create a cursor object    ''' 
 '''
