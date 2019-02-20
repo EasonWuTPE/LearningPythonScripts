@@ -36,7 +36,7 @@ print( arr3 )
 arr3_1 = np.zeros((2,3,3)) 
 print( arr3_1 ) 
 
-arr4 = np.ones((2,3,3)) 
+arr4 = np.ones((2,3,4)) 
 print( arr4 ) 
 
 arr5 = np.array([[1,2.3],[1,3]]) # np.array only exist one data type.  
