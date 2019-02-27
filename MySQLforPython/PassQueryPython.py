@@ -4,7 +4,7 @@ import MySQLdb as mysql
 
 # usually specify the database here ( or optional ). New connection is necessary if new database is specified.  
 mydb = mysql.connect( host="localhost", user="root",
-                        passwd = "Tv0912548857", db="students" ) 
+                        passwd = "***", db="students" ) 
 cur = mydb.cursor() 
 
 ''' 
@@ -16,8 +16,9 @@ cur = mydb.cursor()
 #mydb.commit() 
 #mydb.close() 
 
-command = cur.execute("select * from studentstable;")  
+command = cur.execute("select * from studentstable;") # cursor.execute("Query statement") returns the number of the row that selected from table, but "Insert statement" return nothing. 
 results = cur.fetchall() 
+print(command) 
 print(results) 
 
 print( "\nThe students table is: " ) 
@@ -35,6 +36,7 @@ val = 160
 command = cur.execute("select * from studentstable where height > %d;"%(val))  
 results = cur.fetchall() 
 print( "\nThe students table is: " ) 
+print(command) 
 for i in results: 
     print(i[0],i[1],i[2],i[3]) 
 '''
