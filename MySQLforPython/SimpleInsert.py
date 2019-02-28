@@ -19,7 +19,8 @@ print( "Insert sucessully!\n" )
 '''     Insert values from different tables without drawing that tables into Python or setting variables. '''  
 ''' INSERT DELAYED INTO <table>(<columns>) VALUES(<"values">); ''' 
 '''     insert data to table until no query to the table. ''' 
-mydb.commit() 
-mydb.close() 
+cur.close() # Ensure that the cursor is not used again. 
+mydb.commit() # Make changes permanent. 
+mydb.close() # Close the connection. 
 
 

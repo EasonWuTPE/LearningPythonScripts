@@ -8,15 +8,19 @@ mydb = mysql.connect( host='localhost', user='root',
 cur_ = mydb.cursor() 
 
 tables = "studentstable" 
-command = cur_.execute( "select * from %s;"%tables ) # returns the numbers of the table.
+command = cur_.execute( "select * from %s;"%tables ) # returns the numbers of row of the retreived data.
 results = cur_.fetchall() 
-#print(command) 
+#print('select all:', command) 
 #print(results) 
+
+command = cur_.execute( "describe studentstable;" ) # returns the numbers of row of the retreived data.
+results = cur_.fetchall() 
+print('decribe:', command) 
 
 
 def show(results): 
     for i in range(0,len(results)): 
-        print("%d %s"%(i+1,list(results[i])))
+        print("%d %s"%(i+1,results[i]))
     print('\n',end='') 
 
 
