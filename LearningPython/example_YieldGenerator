@@ -14,15 +14,16 @@ Generator將function打包成iterator
 '''
 
 def myIterable(X):
-	x = 0;
-	while x<=X:
-		yield x**2
-		x+=1
+    x = 0;
+    while x<=X:
+        yield x**2
+        x+=1
+        print("In func:",x) 
 
 print(iter(myIterable(10))) 
 
 for num in myIterable(10): # myIterable is a iterable object
-	print( num, end = "\t" )
+    print( num, end = "\t" )
 
 print( "\n" )	
 
