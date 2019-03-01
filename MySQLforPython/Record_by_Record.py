@@ -30,7 +30,7 @@ def print_results( results_ ):
         print( i ) 
 
 mydb = mysql.connect( host = 'localhost', user = 'root', 
-                        passwd = 'Tv0912548857', db = 'students' ) 
+                        passwd = '***', db = 'students' ) 
 
 statemnts = "Select * from studentstable;" 
 
