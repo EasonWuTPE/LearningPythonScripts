@@ -75,12 +75,14 @@ import MySQLdb as mysql
 
 ''' 
     
-mydb = mysql.connect('localhost','root','Tv0912548857') 
+mydb = mysql.connect('localhost','root','***') 
 cur_ = mydb.cursor() 
 db_name = 'students' 
 statements1 = "CREATE DATABASE IF NOT EXISTS %s" 
 command = cur_.execute(statements1%(db_name)) # reutrn something. 
 print(command) 
 
+cur_.close() 
+mysql.close()
 
 
