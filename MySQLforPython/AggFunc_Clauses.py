@@ -43,10 +43,18 @@ import MySQLdb as mysql
     [Note] GROUP_CONCAT() doesn't sort the values. It can be used with DISTINCT. 
         $ SELECT GROUP_CONCAT( [DISTINCT] <col name> [SEPARATOR <"any char">]) FROM <table name>; 
 
+    [Note] ORDER BY cannot be used after GROUP_CONCAT(). Instead, Use ORDER BY in the function GROUP_CONCAT(). 
+        $ SELECT GROUP_CONCAT( [DISTINCT] <col name> [SEPARATOR <"any char">] [ORDER BY <cols>] ) FROM <table name>; 
+
 ''' 
 ''' 
     GROUP BY v.s. ORDER BY: 
+    
+    GROUP BY is used to organize results according to the structure of the data returned. The results are indexed alphabtically. 
+        $ SELECT <cols> FROM <table> GROUP BY <a col in talbe as a key>; 
 
+    ORDER BY causes no categorization whatsoever. 
+        $ SELECT <col> FROM <table> ORDER BY <column|columns> [ASC|DESC]; 
 
 ''' 
 
