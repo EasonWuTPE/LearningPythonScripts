@@ -4,7 +4,7 @@ import MySQLdb as mysql
 
 ''' 
     Five data types: DATETIME, DATE, TIMESTEMP, TIME, YEAR 
-    These data types of time are used when construct a table like INT, VARCHAR . 
+    These data types of time are used when construct a table like INT, VARCHAR. The input format of date/time data type is a string.  
 ''' 
 
 # DATETIME 
@@ -117,5 +117,8 @@ import MySQLdb as mysql
 
 ''' 
 # Date and Time function on pp.257 
+''' 
+    DATE(), YEAR(), DATE_ADD(), DATEDIFF()...... 
+''' 
 
 
