@@ -61,16 +61,64 @@
         
             $ (<SELECT statements 1>) UNION (<SELECT statements 2>); 
 
-        The numbers of the columns that is returned by each SELECT statements must be equal, or thrown an error. 
+        The numbers of the columns returned by each SELECT statements must be equal, or thrown an error. 
         The name of returned table depends on the selected column on the left of UNION. 
         The data type of each column should be the same with the respect to the columns of the other statement. Otherwise, it will throw strange results. 
+        [Note] The columns in one table must appear in the other table and the data type of both SELECT are the same. Otherwise, it runs strange. 
 
 ''' 
 
-# JOIN 
+# The JOIN and UNION in MySQL are not the same concept of Math. 
+
+# LEFT|RIGHT|FULL JOIN 
 ''' 
     JOIN: 
+        Each set is represented by a table. The first table referenced in the query is the set on the left, the second is presented by another.
+        LEFT or RIGHT JOIN are types of OUTER JOIN, which is specified by user or LEFT by default. 
+
+            $ SELECT <cols to be returned> FROM <table1> <LEFT|RIGHT> JOIN <table2> ON <key col from table1> <relational operator> <key col from table2>;
+        
+        Whichever table is specified as primary is returned in full by default. 
+        If there exists different length of two tables, 
+            a LEFT JOIN will result in the left set being exhaused, a RIGHT will use right set primary. 
+        If the primary set is shorter, the non-primary set will be truncated to fit. 
+        If the non-primary set is shorter, NULL will be return to complement to primary sets values. 
+
+            e.g. $ SELECT birth as Birth FROM Birthdaytab2 LEFT|RIGHT JOIN studentstable ON birthdaytab2.id = studentstable.id; 
+
+        [Note] FULL JOIN in MySQL equals to the concept of union in Math. 
+''' 
+
+# OUTER JOIN 
+''' 
+    OUTER JOIN: 
+        The LEFT|RIGHT|FULL JOIN are types of OUTER JOIN. 
+        This means thate LEFT|RIGHT|FULL JOIN equals to LEFT|RIGHT|FULL OUTER JOIN, which OUTER is optional and can be ommited. 
 
 ''' 
+
+# INNER JOIN 
+''' 
+    INNER JOIN: 
+        The intersection of sets. The concept of INNER JOIN in MySQL is the same as the intersection in Math. 
+
+''' 
+
+# NATURAL JOIN 
+''' 
+    NATURAL JOIN: 
+        Very close concept of INNER JOIN above but ...... 
+''' 
+
+# CROSS JOIN 
+''' 
+    CROSS JOIN: 
+        CROSS JOIN return every record of table 2 of table 1 without condition clause. 
+            
+            $ SELECT <cols in table 1>, <cols in table 2> FROM <table 1> CROSS JOIN <table 2>; 
+
+''' 
+
+
 
 
