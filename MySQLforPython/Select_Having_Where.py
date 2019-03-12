@@ -48,9 +48,15 @@
     Subquery: 
         One wants to use the first result of query to be as input for another query with one statement. 
         
-        $ SELECT <column reference> FROM <table1> WHERE <a column from table1>  <relational operator> (SELECT <a similar column from table2> FROM <table>); 
-                where <relational operators are >, <, =, ANY, IN... so on. 
+        $ SELECT <column reference> FROM <table1> WHERE <a column from table1>  <relational operator> (SELECT <a "similar" column from table2> FROM <table>); 
+                where <relational operators are =, ANY, IN... so on. 
 
+        e.g. $ SELECT title FROM film WHERE film_id = ( SELECT film_id FROM film_actor WHERE film_id='17' AND film_id='3'); 
+
+        [Note] 
+            In order to have MySQL process for each row of a series in sequence, use IN or ANY. 
+                IN: be used to process an expression list. 
+                = ANY: be used on the right side of any relational operator to cause MySQL to process any True value that is returned. 
 
 ''' 
 
@@ -102,12 +108,25 @@
     INNER JOIN: 
         The intersection of sets. The concept of INNER JOIN in MySQL is the same as the intersection in Math. 
 
+            $ SELECT <cols to be returned> FROM <table1> INNER JOIN <table2> ON <key col from table1> <relational operator> <key col from table2>;
 ''' 
 
 # NATURAL JOIN 
 ''' 
     NATURAL JOIN: 
-        Very close concept of INNER JOIN above but ...... 
+        Very close concept of INNER JOIN above. 
+
+            $ SELECT <cols in tab1> FROM <tab1> NATURAL JOIN <tab2>; 
+''' 
+
+# NATURAL LEFT|RIGHT JOIN 
+''' 
+    NATURAL LEFT|RIGHT JOIN: 
+
+            NATURAL LEFT JOIN equals to LEFT [OUTER] JOIN  
+            NATURAL RIGHT JOIN equals to RIGHT [OUTER] JOIN  
+
+            $ SELECT <cols in tab1> FROM <tab1> NATURAL <LEFT|RIGHT> JOIN <tab2>; 
 ''' 
 
 # CROSS JOIN 
