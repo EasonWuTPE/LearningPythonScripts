@@ -2,7 +2,47 @@
 
 # Class 
 ''' 
-        A class ,a coding structure and device used to implement new kinds of objects in Python that support "inheritance", defined with classes can look like the built-in types.
+    1. Multiple instance: 
+        Each object generated from a class has access to the class's attributes 
+            and gets a namespace of its own for data that varies per object. 
+        The classes are a kind of factory for generating instances. 
+        e.g. A = classA() # A is a instance of class classA 
+        e.g. B = classA() # B is another instance of class classA 
+
+    2. Customized via inheritance: 
+        We can extend a class by re-defining its attributes outside the class itself in new software components coded as subclass. 
+        From buttom to top, left to right. 
+
+    3. Operator overloading: 
+        Python provides hooks that classes can use to intercept and implement any built-in type operation. 
+
+
+    Graph: 
+
+                    classA          classB
+                      ^               ^
+                      |               | 
+                      |               |  
+                      +---------------+ 
+                             |
+                             |
+                           classC
+                             ^
+                             | 
+                             |
+                    +-------------------+
+                    |                   |
+                    |                   |
+                    A                   B 
+
+        [Note] The classA and classB are superclass of classC, and classC is subclass of classA and classB. 
+               A and B are different instance if classC. 
+               Superclass provides behavior shared by all their subclasses but because the search proceeds from the bottom up, 
+                    subclasses may override behavior defined in their superclasses by redefining  superclass names lower in the tree. 
+
+''' 
+''' 
+        A class, a coding structure and device used to implement new kinds of objects in Python that support "inheritance", defined with classes can look like the built-in types.
 	A class can be thought as packages of functions. "inheritance" is a mechanism of code customization and reuse above and beyond anything. Classes also define new namespaces, like modules, and generate a new object.
 '''
 # Class Structure
@@ -40,9 +80,10 @@ class Name_of_Class( ): # define a class object
     subclass can use the method and names which are defined in the class by "self.". The order is that find the methods and names in the subclass first, then find the class, if not found. If the class still doesn't find the methods and names and is a subclass of another, then find another class.
     This relation of path described above is called "inheritance".
 '''    
-class SubClass( BaseClass ): # define the subclass with the class in parathensis.
+class SubClass( BaseClass1, BaseClass2, BaseClass3, ... ): # define the subclass with the class in parathensis.
 
     def __init__( self, arg1, arg2, ... ):
+        super( SubClass, self ).__init__( self, ... ): 
         # self represents the built instance of class
 	self.arg1 = arg1
 	self.arg1 = arg1
