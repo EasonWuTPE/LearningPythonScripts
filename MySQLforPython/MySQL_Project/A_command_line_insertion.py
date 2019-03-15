@@ -46,7 +46,8 @@ def is_describe_tables( tables, cursor_objects, print_describe ):
         table_def.add_row( [ results[i][0], results[i][1], results[i][2], results[i][3], results[i][4], results[i][5] ] ) 
 
     # Print out the results. 
-    if print_describe == 'y' or print_describe == 'Y': 
+    #print(table_def) if print_describe == 'y' or print_describe == 'Y' else pass 
+    if print_describe == 'y' or print_describe == 'Y':
         print( table_def ) 
     return results 
 

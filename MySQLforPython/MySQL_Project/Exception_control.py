@@ -42,8 +42,15 @@ class Form_MySQL_Statement():
         while True: 
             try: 
                 print("Try SQL statement: '%s'..."%(statement)) 
-                cursor.execute(statement) 
-                
+
+                if self.type == 'select': 
+                    self.getColumnSelect(cursor,table)  
+                    affected_row = cursor.execute(statement) 
+                    self.getResultSelect(cursor,affected_row) 
+                else: 
+                    affected_row = cursor.execute(statement) 
+
+
                 print( "Your statement: '%s' has been executed!!"%(statement) ) 
                 return  "Your statement: '%s' has been executed!!"%(statement) 
             # OperationalError
@@ -64,6 +71,24 @@ class Form_MySQL_Statement():
             except mysql.Warning: 
                 pass 
 
+    def getColumnSelect(self,cur_,table): 
+        statement = "DESCRIBE %s"%(table) 
+        num = cur_.execute(statement) 
+        columns_results = cur_.fetchall() 
+        print("DEBUG:",columns_results) 
+        to_list = [] 
+        for i in range(len(columns_results)): 
+            to_list.append(columns_results[i][0]) 
+        self.to_table = PrettyTable(to_list)
+
+    def getResultSelect(self,cur_, row): 
+        results_of_select = cur_.fetchall() 
+        to_list = [] 
+        for k in range(row): 
+            for i in range(len(results_of_select[k])): 
+                to_list.append(results_of_select[k][i]) 
+        self.to_table.add_row(to_list) 
+        print(self.to_table) 
 
 ''' Other functions ''' 
 def check_valid_input( bechecked, name ): 
@@ -89,12 +114,11 @@ def sendmail( msg, recipient ):
     ''' 
     fromaddr = "tvjs168@gmail.com" 
     toaddr = recipient+"@gmail.com" 
-
     msg = 
     ''' 
     pass 
 
-
+    
 
 ''' Main function ''' 
 def main(): 
@@ -136,6 +160,7 @@ def main():
         phrase = request.form(table,columns,values) 
         results = request.execute_statement(phrase, table, connection_cursor ) 
         print("Results: %s\n"%(results)) 
+        
         connection_cursor.close() 
 
     except mysql.MySQLError as e: 
