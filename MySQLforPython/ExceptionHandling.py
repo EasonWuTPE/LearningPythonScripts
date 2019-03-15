@@ -35,23 +35,23 @@ if x == '':
 
             try: 
                 statements 
-            except MySQLdb.<error type>, e: 
+            except MySQLdb.<error type> as e: 
                 raise e 
 
         2. Catch different exceptions: 
 
             try: 
                 statements 
-            except MySQLdb.<error type I>, e: 
+            except MySQLdb.<error type I> as e: 
                 raise e 
-            except MySQLdb.<error type II>, e: 
+            except MySQLdb.<error type II> as e: 
                 raise e 
 
         3. Combine exceptions: 
 
             try: 
                 statements 
-            except (MySQLdb.<error type>, MySQLdb.<error type>), e: 
+            except (MySQLdb.<error type>, MySQLdb.<error type>) as e: 
                 raise e 
 
 ''' 
