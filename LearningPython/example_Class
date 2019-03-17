@@ -5,7 +5,7 @@
     1. Multiple instance: 
         Each object generated from a class has access to the class's attributes 
             and gets a namespace of its own for data that varies per object. 
-        The classes are a kind of factory for generating instances. 
+        The classes are a kind of factories for generating instances. 
         e.g. A = classA() # A is a instance of class classA 
         e.g. B = classA() # B is another instance of class classA 
 
