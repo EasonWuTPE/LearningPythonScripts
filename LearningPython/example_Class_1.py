@@ -37,14 +37,19 @@ y.display()
 x.data = "Assign outside the class" 
 x.display() 
 # Create new attributes outside the class's method function by assignment to self. 
+# The new attributes are with instance if assign it to instace, i.e. class has no this new attributes. 
 y.CreateNewValueOutsideClass = 'Create New Value Outside the Class' 
 print(y.CreateNewValueOutsideClass) 
+#print(FirstClass.CreateNewValueOutsideClass) # This may lead to error, because the new attributes are created in instance's namespace.
+
 ''' 
     [Note]
     1. Classes usually create all of the instance's attributes by assigment to the self argument. 
-    2. The argument self is the instance itself. 
-    3. The instance can create new attributes outside the class's method function by assigment to self. 
+    2. The argument self means the instance itself. 
+    3. The instance can create new attributes outside the class's method function by assigment to self, which cannot called from class. 
         i.e. Object.NewVariable = 100, where .NewVariable is not defined in the class. 
+    4. The class can also create new attributes outside class with assignment to self. 
+        This created attributes automatically inherit by subclass and can be called by instances. 
 ''' 
 
 # II. 
@@ -59,9 +64,7 @@ print(y.CreateNewValueOutsideClass)
             Each instance gets names from the class it is generated from, ae well as all of that class's superclass. 
             When looking for a name, Python checks the instance, then its class, the all superclass. 
         4. Each object.attribute reference invokes a new, independent search. 
-        5. Logic changes are made by subclassing, not by changing suoerclass. 
-
-
+        5. Logic changes are made by subclassing, not by changing superclass. 
 ''' 
 
 # Second Example 
@@ -145,7 +148,7 @@ b = a+'xyz'
                         'abc'      'xyz' -----> Initialize another instance of ThirdClass with 'abcxyz' 
 
 ''' 
-b.display() # __add__ makes a new instance that hass all ThirdClass attributes. 
+b.display() # __add__ makes a new instance that has all ThirdClass attributes. 
 print(b) 
 
 a.mul(3) 
@@ -163,6 +166,7 @@ print(rec.name)
 ''' 
     Above works even though there is no instance of the class yet. 
     Classes are objects in their own right, even without instances. 
+    For those attributes defined outside the class can be called by their instances. 
 ''' 
 
 x = rec() 
@@ -174,4 +178,47 @@ print( x.name, y.name ) # x is another namespace.
 ''' 
     Actually, the attributes of a namespace objects are usually implemented as dictionary. 
 ''' 
+
+
+def uppername(obj): 
+    # Simple define a function with receiving a class object as argument. 
+    return obj.name.upper() 
+
+print( uppername(x) ) 
+
+rec.method_created_outside_class = uppername # Create new method outside the class 
+
+print(x.method_created_outside_class()) 
+print(y.method_created_outside_class()) 
+print(rec.method_created_outside_class(x))
+''' 
+    [Note] 
+    New method can be created ouside the class, which is the same with new name created outside the class. 
+''' 
+
+# Another example inherits rec class 
+pers1 = rec() 
+pers1.name = 'Bob' 
+pers1.job = ['dev','msg'] 
+pers1.age = 40 
+
+pers2 = rec() 
+pers2.name = 'Sue' 
+pers2.job = ['dev','cto'] 
+print(pers1.name, pers2.name) 
+
+# Class implement 
+class Person():
+    def __init__(self, name, jobs, age = None ):
+        self.name = name 
+        self.jobs = jobs 
+        self.age = age 
+    def info(self): 
+        return (self.name, self.jobs) 
+
+rec1 = Person('Bob',['dev','mgr'],40.5) 
+rec2 = Person('Sue',['dev','cto']) 
+
+print(rec1.jobs, rec2.info()) 
+
 

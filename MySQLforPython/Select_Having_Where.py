@@ -36,7 +36,7 @@
 
     [Conclusion] 
     1. HAVING condition must be indicated in the SELECT statement previuosly. 
-    2. HAVING condition with aggregate functions must bt placed in the GROUP BY statement. 
+    2. HAVING condition with aggregate functions must be placed in the GROUP BY statement. 
        If one wants to use the argument of the aggregate function in SELECT, referenced the aggregate function AS another variable is required, because of the priority of the evaluation of the aggregate function. 
     3. MySQL executes the WHERE condition before optimizing and executes the HAVING statement after the optimizing. 
        i.e. WHERE reduce the amount of data through a simple filter, and HAVING filters the results. 
@@ -49,7 +49,7 @@
         One wants to use the first result of query to be as input for another query with one statement. 
         
         $ SELECT <column reference> FROM <table1> WHERE <a column from table1>  <relational operator> (SELECT <a "similar" column from table2> FROM <table>); 
-                where <relational operators are =, ANY, IN... so on. 
+                where <relational operators are =, = ANY, IN... so on. 
 
         e.g. $ SELECT title FROM film WHERE film_id = ( SELECT film_id FROM film_actor WHERE film_id='17' AND film_id='3'); 
 
@@ -99,7 +99,7 @@
 ''' 
     OUTER JOIN: 
         The LEFT|RIGHT|FULL JOIN are types of OUTER JOIN. 
-        This means thate LEFT|RIGHT|FULL JOIN equals to LEFT|RIGHT|FULL OUTER JOIN, which OUTER is optional and can be ommited. 
+        This means that LEFT|RIGHT|FULL JOIN equals to LEFT|RIGHT|FULL OUTER JOIN, which OUTER is optional and can be ommited. 
 
 ''' 
 
