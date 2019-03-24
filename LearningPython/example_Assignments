@@ -11,7 +11,7 @@ x = "abc"
 print( x )
 
 # Case II
-x,y="as","sa" # Tuple assignments
+x,y="as","sa" # Tuple assignments. "as" and "sa" are assigned to x and y simultaneously. 
 print( x, y )
 [x1,y1] = [100,200] # List assignments
 print( x1, y1 )
@@ -31,7 +31,7 @@ print( a, b ,c )
 
 # Case IV
 h=w="XYZ"
-print( h, w,sep=' ' )
+print( h, w,sep=' ' ) # h and w are "XYZ". 
 
 # Case V: Extended sequence unpacking ( any iteral objects ) 
 p,*k = 'ABE' # p is assigned A, *k is assigned the rest of objects in LIST form.
@@ -52,7 +52,7 @@ print( a, b, c)
  Slice returns a sequence of the same type as the object sliced.
 '''
 '''
- If nothin left to the starred name, it is assigned an empty list.
+ If nothing left to the starred name, it is assigned an empty list.
 '''
 a,b,c,*e = "ABS"
 print( a,b,c,e) 
@@ -100,7 +100,7 @@ print(L)
 # Specail Case
 # or to assign names
 a,b,c = 100,200,""
-x = a or b or c # a is nonempty, so x is assigned to a
+x = a or b or c # a is nonempty, so x is assigned to a. It's about 'or' and 'and' operator. See more on example_TrueValueAndBool script.
 print( x )
 x = c or a or b # c is empty, so x is assigned to a
 print( x )
